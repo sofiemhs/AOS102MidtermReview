@@ -18,9 +18,9 @@ st.markdown("""
         color: #000000 !important; /* All text black */
     }
 
-    /* Main background - Darker Aquamarine */
+    /* Main background - BLue */
     .stApp {
-        background-color: #40B5AD; 
+        background-color: #006884; 
     }
     
     /* Buttons */
