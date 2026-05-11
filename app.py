@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 # --- APP CONFIGURATION ---
 st.set_page_config(page_title="Climate Science Terminal", page_icon="💻", layout="wide")
@@ -25,7 +26,7 @@ st.markdown("""
     }
     
     /* Buttons */
-    .stButton>button {
+    .stButton>button, .stFormSubmitButton>button {
         width: 100%;
         border-radius: 4px;
         height: 3em;
@@ -37,7 +38,7 @@ st.markdown("""
         box-shadow: 4px 4px 0px #000000;
     }
     
-    .stButton>button:hover {
+    .stButton>button:hover, .stFormSubmitButton>button:hover {
         background-color: #e2e8f0; 
         transform: translate(2px, 2px);
         box-shadow: 2px 2px 0px #000000;
@@ -95,6 +96,10 @@ ALL_CHAPTERS = [
     "7. Choosing the Future"
 ]
 
+# Set the initial page if it hasn't been set yet
+if 'nav_radio' not in st.session_state:
+    st.session_state.nav_radio = ALL_CHAPTERS[0]
+
 # --- SIDEBAR NAVIGATION ---
 with st.sidebar:
     st.markdown("### 💻 SYSTEM NAVIGATOR")
@@ -105,12 +110,16 @@ with st.sidebar:
     st.write("*(Achieve 5/5 on current mission to unlock next clearance)*")
     st.write("---")
     
+    # Slice the list to only show unlocked chapters
     available_chapters = ALL_CHAPTERS[:st.session_state.max_unlocked + 1]
-    lesson_choice = st.radio("Access File:", available_chapters)
+    
+    # The radio button is tied directly to session_state.nav_radio
+    lesson_choice = st.radio("Access File:", available_chapters, key="nav_radio")
     
     st.write("---")
     if st.button("System Reset (Restart Course)"):
         st.session_state.max_unlocked = 0
+        st.session_state.nav_radio = ALL_CHAPTERS[0]
         st.rerun()
 
 # --- HELPER FUNCTION FOR QUIZZES ---
@@ -128,11 +137,17 @@ def run_quiz(chapter_index, questions_and_answers):
             
         if st.form_submit_button("Submit Analysis"):
             score = sum(1 for i, ans in enumerate(user_answers) if ans == questions_and_answers[i]['ans'])
+            
             if score == 5:
                 if st.session_state.max_unlocked == chapter_index:
-                    st.session_state.max_unlocked += 1
-                    st.success("ACCESS GRANTED. New files unlocked in sidebar.")
+                    st.success("ACCESS GRANTED. Bypassing security... advancing to next file.")
+                    # Update unlock status
+                    st.session_state.max_unlocked = chapter_index + 1
+                    # Auto-advance the sidebar radio button to the next chapter
+                    st.session_state.nav_radio = ALL_CHAPTERS[chapter_index + 1]
+                    
                     st.balloons()
+                    time.sleep(1.5) # Give the user time to see the success message
                     st.rerun()
                 else:
                     st.success("Perfect score retained. Clearance already granted.")
@@ -153,10 +168,11 @@ if lesson_choice == "0. Terminal Boot (Welcome)":
     <p>Failure means you stay stuck on your current assignment. Proceed to Chapter 1 when ready.</p>
     </div>
     """, unsafe_allow_html=True)
+    
     if st.button("Acknowledge & Begin"):
-        if st.session_state.max_unlocked == 0:
-            st.session_state.max_unlocked = 1
-            st.rerun()
+        st.session_state.max_unlocked = max(st.session_state.max_unlocked, 1)
+        st.session_state.nav_radio = ALL_CHAPTERS[1] # Auto-advances to Chapter 1
+        st.rerun()
 
 elif lesson_choice == "1. The Signal and the Noise":
     st.title("File 1: The Signal and the Noise")
