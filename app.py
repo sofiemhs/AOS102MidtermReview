@@ -1,228 +1,403 @@
 import streamlit as st
-import time
 
 # --- APP CONFIGURATION ---
-st.set_page_config(page_title="ClimateScience PRO", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="Climate Science Master Guide", page_icon="🌍", layout="wide")
 
-# --- CUSTOM "PRETYYYYY" CSS ---
+# --- CUSTOM CLIMATE THEME CSS ---
+# Colors: 
+# Deep Ocean Blue (Sidebar/Headers): #0c4a6e
+# Earthy Emerald Green (Buttons/Accents): #059669
+# Clear Sky Blue (Highlights): #0ea5e9
+# Cloud White (Cards): #ffffff
+# Deep Slate (Text for high contrast): #0f172a
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600;700&display=swap');
     
     html, body, [class*="css"]  {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: #0f172a; /* High contrast text */
     }
     
-    h1, h2, h3 {
-        font-family: 'Space Grotesk', sans-serif;
-        color: #0f172a;
+    h1, h2, h3, h4, h5 {
+        font-family: 'Merriweather', serif;
+        color: #0c4a6e; /* Deep Ocean Blue */
     }
 
-    .main {
-        background-color: #f8fafc;
+    /* Main background - very light icy blue */
+    .stApp {
+        background-color: #f0f9ff; 
     }
     
+    /* Buttons */
     .stButton>button {
         width: 100%;
-        border-radius: 12px;
+        border-radius: 8px;
         height: 3em;
-        background-color: #38bdf8;
-        color: white;
+        background-color: #059669; /* Earthy Emerald */
+        color: #ffffff !important; /* Pure white text for contrast */
         font-weight: bold;
         border: none;
         transition: 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     
     .stButton>button:hover {
-        background-color: #0ea5e9;
+        background-color: #047857; /* Darker Emerald */
         transform: translateY(-2px);
     }
 
+    /* Content Cards */
     .lesson-card {
-        background-color: white;
-        padding: 30px;
-        border-radius: 20px;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 6px solid #0ea5e9; /* Sky blue accent */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         margin-bottom: 20px;
+        color: #0f172a; /* Explicit dark text */
+    }
+    
+    .lesson-card h3 {
+        margin-top: 0;
+        color: #0c4a6e;
     }
 
-    .progress-sidebar {
-        background-color: #0f172a;
-        color: white;
-        padding: 20px;
-        border-radius: 15px;
+    .lesson-card li {
+        margin-bottom: 8px;
+    }
+
+    /* Info panels */
+    .stAlert {
+        background-color: #e0f2fe;
+        color: #0c4a6e;
+        border: 1px solid #bae6fd;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# --- SESSION STATE ---
+# --- SESSION STATE (Tracking Progress) ---
 if 'progress' not in st.session_state:
     st.session_state.progress = 0
 if 'completed_lessons' not in st.session_state:
     st.session_state.completed_lessons = set()
 
-# --- SIDEBAR PROGRESS TRACKER ---
+# --- SIDEBAR NAVIGATION ---
 with st.sidebar:
-    st.markdown("### 🗺️ Study Progress")
-    st.progress(st.session_state.progress / 100)
-    st.write(f"**Total Completion:** {st.session_state.progress}%")
+    st.markdown("### 🌍 Course Navigator")
+    
+    # Calculate progress based on 7 chapters (approx 14.2% each)
+    prog_percent = int((len(st.session_state.completed_lessons) / 7) * 100)
+    st.progress(prog_percent / 100)
+    st.write(f"**Mastery:** {prog_percent}%")
     st.write("---")
     
     lesson_choice = st.radio(
-        "Select Lesson:",
-        ["Welcome Page", "1. Variability & Pillars", "2. Models & Radiation", "3. Dynamic Physics", "4. El Niño (ENSO)", "5. Global Warming & Feedbacks"]
+        "Select Chapter:",
+        [
+            "Welcome", 
+            "1. Overview of Climate Variability", 
+            "2. Basics of Global Climate", 
+            "3. Physical Processes", 
+            "4. El Niño & Predictions", 
+            "5. Climate Models", 
+            "6. Greenhouse Effect & Feedbacks",
+            "7. Global Warming Scenarios"
+        ]
     )
     
-    if st.button("Clear Progress"):
+    st.write("---")
+    if st.button("Reset Course"):
         st.session_state.progress = 0
         st.session_state.completed_lessons = set()
         st.rerun()
 
-# --- LESSONS ---
+# --- HELPER FUNCTION FOR COMPLETION ---
+def mark_completed(lesson_id):
+    if lesson_id not in st.session_state.completed_lessons:
+        st.session_state.completed_lessons.add(lesson_id)
+        st.success(f"Chapter completed! You're making great progress.")
+        st.balloons()
+        st.rerun()
 
-if lesson_choice == "Welcome Page":
-    st.title("🌍 Climate Science Master Navigator")
-    st.markdown("""
-    ### Welcome to your Interactive Study Guide!
-    This app is designed to teach you everything from **Atmospheric Physics** to **Global Warming Scenarios**.
-    
-    **How to use:**
-    1. Select a lesson from the sidebar.
-    2. Read through the deep-dive content.
-    3. Pass the **Interactive Knowledge Check** to gain progress points.
-    4. Complete all lessons to reach 100%!
-    """)
-    st.image("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop")
+# ==========================================
+# PAGE CONTENT
+# ==========================================
 
-elif lesson_choice == "1. Variability & Pillars":
-    st.title("🌀 Lesson 1: Climate Variability")
-    
-    with st.container():
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>The Pillars of Variability</h3>
-        <p>Climate isn't just one thing—it's a mix of three distinct sources:</p>
-        <ul>
-            <li><b>Internal Variability:</b> Natural wobbles (ENSO, NAO).</li>
-            <li><b>Natural External Forcing:</b> Solar changes, Milankovitch cycles (Earth's orbit), Volcanic dust.</li>
-            <li><b>Anthropogenic Forcing:</b> CO2, Methane, and Sulfates.</li>
-        </ul>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("#### Knowledge Check")
-    q1 = st.radio("Which of these is a 'Natural External' forcing?", ["CO2 Emissions", "Milankovitch Cycles", "El Niño"])
-    if st.button("Submit Answer"):
-        if q1 == "Milankovitch Cycles":
-            st.success("Correct! 🚀")
-            if "L1" not in st.session_state.completed_lessons:
-                st.session_state.progress += 20
-                st.session_state.completed_lessons.add("L1")
-        else:
-            st.error("Try again! Remember: External forcing comes from outside the climate system.")
-
-elif lesson_choice == "2. Models & Radiation":
-    st.title("☀️ Lesson 2: Models & Radiation")
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Radiation Laws</h3>
-        <p>The energy emitted by Earth follows the <b>Stefan-Boltzmann Law</b>:</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.latex(r"E = \sigma T^4")
-        st.write("This means a small change in temperature (T) leads to a massive change in energy output!")
-
-    with col2:
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Model Hierarchy</h3>
-        <p>Climate is a <b>Boundary Value Problem</b>. We use a hierarchy to simulate it:</p>
-        <ul>
-            <li><b>EBMs:</b> Simple energy math.</li>
-            <li><b>GCMs:</b> 3D math on a global grid.</li>
-        </ul>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("#### Albedo Calculator")
-    albedo = st.slider("Adjust Earth Albedo (0.3 is average)", 0.0, 1.0, 0.3)
-    st.write(f"At {albedo} albedo, the Earth reflects {albedo*100}% of sunlight.")
-    
-    if st.button("Complete Lesson 2"):
-        if "L2" not in st.session_state.completed_lessons:
-            st.session_state.progress += 20
-            st.session_state.completed_lessons.add("L2")
-            st.rerun()
-
-elif lesson_choice == "3. Dynamic Physics":
-    st.title("🌪️ Lesson 3: Geophysical Dynamics")
-    st.write("Understand the forces moving air and water.")
-    
+if lesson_choice == "Welcome":
+    st.title("🌱 Comprehensive Climate Science Guide")
     st.markdown("""
     <div class="lesson-card">
-    <h3>The Balance of Forces</h3>
-    <p><b>Geostrophic Balance:</b> The state where the <b>Pressure Gradient Force</b> (PGF) is exactly countered by the <b>Coriolis Force</b>.</p>
+    <h3>Welcome to your fully elaborated study platform!</h3>
+    <p>This application covers the entire 7-chapter syllabus of Earth's climate system, physical mechanisms, feedback loops, and global climate modeling.</p>
+    <p><b>Instructions:</b></p>
     <ul>
-        <li>In the Northern Hemisphere, Coriolis turns wind to the <b>Right</b>.</li>
-        <li><b>Rossby Waves:</b> These are the giant 'meanders' in the Jet Stream that cause weather patterns.</li>
+        <li>Navigate through the chapters using the sidebar.</li>
+        <li>Read the detailed breakdowns in the tabbed sections.</li>
+        <li>Pass the Knowledge Check at the bottom of each chapter to track your progress.</li>
     </ul>
     </div>
     """, unsafe_allow_html=True)
-    
-    st.latex(r"P = \rho R T")
-    st.caption("The Equation of State for Atmosphere.")
-    
-    if st.button("Complete Lesson 3"):
-        if "L3" not in st.session_state.completed_lessons:
-            st.session_state.progress += 20
-            st.session_state.completed_lessons.add("L3")
-            st.rerun()
 
-elif lesson_choice == "4. El Niño (ENSO)":
-    st.title("🌊 Lesson 4: ENSO & Walker Circulation")
+# --- CHAPTER 1 ---
+elif lesson_choice == "1. Overview of Climate Variability":
+    st.title("Chapter 1: Overview of Climate Variability")
     
-    tab1, tab2 = st.tabs(["Normal State", "El Niño"])
+    tab1, tab2, tab3 = st.tabs(["Dynamics & Systems", "El Niño & Global Warming", "Paleoclimate & History"])
     
     with tab1:
-        st.write("Trade winds blow East to West, cold water upwells in South America.")
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Climate Dynamics and Systems</h3>
+        <p><b>Climate vs. Weather:</b> Weather is the exact state of the atmosphere at a given time (chaotic), while climate is the boundary value problem defining the statistics of weather over time.</p>
+        <p><b>Chemical & Physical Aspects:</b> The climate is a coupled system involving the atmosphere, hydrosphere (oceans), cryosphere (ice), lithosphere (land), and biosphere. Trace gas concentrations (like CO2 and Methane) drastically alter the chemical makeup, leading to physical changes (temperature shifts).</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
     with tab2:
-        st.write("Trade winds collapse, warm pool sloshes East. Thermocline flattens.")
-    
-    st.warning("**Bjerknes Feedback:** A self-reinforcing loop where weak winds lead to warmer waters, which lead to even weaker winds!")
-    
-    if st.button("Complete Lesson 4"):
-        if "L4" not in st.session_state.completed_lessons:
-            st.session_state.progress += 20
-            st.session_state.completed_lessons.add("L4")
-            st.rerun()
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>El Niño & Global Change</h3>
+        <p><b>El Niño:</b> The premier example of natural, internal climate variability. Studies of events like the massive 1997-98 El Niño paved the way for the first coupled ocean-atmosphere models used for forecasting.</p>
+        <p><b>Recent History:</b> Global temperatures have risen alongside trace gas concentrations. We also monitor phenomena like the Ozone Hole, which has its own history of study and successful global mitigation (Montreal Protocol).</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-elif lesson_choice == "5. Global Warming & Feedbacks":
-    st.title("🔥 Lesson 5: Global Warming & Scenarios")
-    
-    st.markdown("""
-    <div class="lesson-card">
-    <h3>Feedback Loops</h3>
-    <ul>
-        <li><b>Water Vapor (+):</b> Biggest amplifier.</li>
-        <li><b>Ice-Albedo (+):</b> Causes Polar Amplification.</li>
-        <li><b>Lapse Rate (-):</b> Stabilizing feedback in tropics.</li>
-    </ul>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.info("**The Commitment:** Even if emissions stop, temps rise for decades because the Deep Ocean takes forever to warm up.")
-    
-    if st.button("Finish Course!"):
-        if "L5" not in st.session_state.completed_lessons:
-            st.session_state.progress = 100
-            st.session_state.completed_lessons.add("L5")
-            st.balloons()
-            st.rerun()
+    with tab3:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Paleoclimate Variability</h3>
+        <p>By studying ice cores, tree rings, and ocean sediments, we understand how climate behaved before human instrumentation. This gives us a baseline of natural variability (e.g., Milankovitch cycles causing ice ages) to compare against modern anthropogenic warming.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-if st.session_state.progress == 100:
-    st.title("🏆 100% COMPLETE!")
-    st.success("You have mastered Climate Dynamics! You're ready for GitHub.")
+    st.markdown("### 🧠 Knowledge Check")
+    q1 = st.radio("Which of the following is considered 'natural, internal climate variability'?", ["Ozone Depletion", "El Niño", "Milankovitch Cycles"])
+    if st.button("Submit Chapter 1"):
+        if q1 == "El Niño": mark_completed("Ch1")
+        else: st.error("Incorrect. Remember, El Niño is an internal wobble of the ocean-atmosphere system.")
+
+# --- CHAPTER 2 ---
+elif lesson_choice == "2. Basics of Global Climate":
+    st.title("Chapter 2: Basics of Global Climate")
+
+    tab1, tab2, tab3 = st.tabs(["Radiative Forcing & Energy", "Circulation Systems", "Carbon Cycle & Land"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Radiative Forcing & Energy Budget</h3>
+        <p><b>Blackbody Radiation:</b> The Earth receives Solar (shortwave) energy and emits Blackbody (longwave infrared) energy.</p>
+        <p><b>Gradients:</b> The equator receives more solar radiation than the poles. This gradient of radiative forcing requires the atmosphere and ocean to transport heat poleward to maintain a global energy balance.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Atmospheric & Ocean Circulation</h3>
+        <p><b>Atmosphere:</b> Features distinct vertical structures (Troposphere, Stratosphere) and latitudinal cells (Hadley, Ferrel, Polar cells) that dictate global wind patterns.</p>
+        <p><b>Ocean:</b> Divided into surface wind-driven circulation (gyres) and deep <b>Thermohaline Circulation</b> driven by density differences (temperature and salinity). The ocean's vertical structure includes a mixed layer, thermocline, and deep ocean.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with tab3:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Land Processes & Carbon Cycle</h3>
+        <p>Land surfaces impact climate via Albedo (reflectivity) and moisture fluxes. The Carbon Cycle moves carbon between the atmosphere, terrestrial biosphere, oceans, and lithosphere. Human activity disrupts this by rapidly moving lithospheric carbon (fossil fuels) into the atmosphere.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q2 = st.radio("What drives the ocean's deep Thermohaline Circulation?", ["Surface Winds", "Temperature and Salinity differences", "The Coriolis Force alone"])
+    if st.button("Submit Chapter 2"):
+        if q2 == "Temperature and Salinity differences": mark_completed("Ch2")
+        else: st.error("Incorrect. 'Thermo' means temperature, 'haline' means salinity.")
+
+# --- CHAPTER 3 ---
+elif lesson_choice == "3. Physical Processes":
+    st.title("Chapter 3: Physical Processes in the Climate System")
+
+    tab1, tab2, tab3 = st.tabs(["Momentum & State", "Temperature & Continuity", "Moist Processes & Waves"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Conservation of Momentum & Equation of State</h3>
+        <p><b>Forces:</b> Air and water move due to the Pressure Gradient Force. On a rotating Earth, the Coriolis Force deflects this movement, leading to Geostrophic Wind balances.</p>
+        <p><b>Hydrostatic Balance:</b> Relates pressure to height (gravity pulling down vs. pressure pushing up).</p>
+        <p><b>Equation of State:</b> For the atmosphere, it's the Ideal Gas Law. For the ocean, density relies on temperature, salinity, and pressure. This explains thermal expansions causing sea-level rise.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.latex(r"P = \rho R T")
+
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Temperature & Continuity Equations</h3>
+        <p><b>Temperature:</b> Changes due to advection (moving air/water), radiation, and latent heat. The dry adiabatic lapse rate dictates how dry air cools as it rises.</p>
+        <p><b>Continuity (Mass Conservation):</b> Water and air cannot be destroyed. Diverging surface waters must be replaced by deeper water (Coastal & Equatorial Upwelling).</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab3:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Moist Processes & Wave Dynamics</h3>
+        <p><b>Moisture:</b> When air rises, it hits the Lifting Condensation Level, achieving saturation. Condensation releases latent heat, changing the cooling rate to the 'moist adiabat'.</p>
+        <p><b>Waves:</b> Gravity waves, Kelvin waves (equatorial trapped waves), and Rossby waves (planetary waves) transfer energy and momentum across vast distances in both the ocean and atmosphere.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q3 = st.radio("What happens to an air parcel when it reaches the Lifting Condensation Level?", ["It begins to sink", "It reaches saturation and condensation begins", "It loses all its latent heat instantly"])
+    if st.button("Submit Chapter 3"):
+        if q3 == "It reaches saturation and condensation begins": mark_completed("Ch3")
+        else: st.error("Incorrect. This is the exact altitude where clouds form due to saturation.")
+
+# --- CHAPTER 4 ---
+elif lesson_choice == "4. El Niño & Predictions":
+    st.title("Chapter 4: El Niño and Year-to-Year Prediction")
+
+    tab1, tab2, tab3 = st.tabs(["ENSO Mechanisms", "Wave Dynamics", "Teleconnections & Forecasting"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>The Bjerknes Hypothesis & Extremes</h3>
+        <p><b>Climatology:</b> Normal Pacific has a 'Warm Pool' in the West and cold upwelling in the East. </p>
+        <p><b>The Loop:</b> Bjerknes proposed that weakened trade winds allow the warm pool to slosh East, which flattens the thermocline, reduces the East-West temperature gradient, and weakens the winds further (Positive Feedback).</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Transition Dynamics (The 1997-98 Event)</h3>
+        <p><b>Subsurface Anomalies:</b> El Niño isn't just surface phenomena. Equatorial jets and <b>Kelvin waves</b> transport massive amounts of warm water across the Pacific.</p>
+        <p><b>Delayed/Recharge Oscillator:</b> These models explain why El Niño ends. Rossby waves reflect off landmasses and return as Kelvin waves to reset the thermocline, shifting the system toward La Niña.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with tab3:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Prediction & Teleconnections</h3>
+        <p><b>Teleconnections:</b> How a warm Pacific alters global weather (e.g., Sahel droughts, altering Hurricane seasons, shifting the North Atlantic Oscillation).</p>
+        <p><b>Limits to Skill:</b> Forecasts are limited by the chaotic nature of the atmosphere and spring predictability barriers, but seasonal predictions are highly valuable.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q4 = st.radio("Which wave is primarily responsible for shifting the thermocline to eventually 'shut off' an El Niño?", ["Gravity Waves", "Rossby to Kelvin wave reflections (Delayed Oscillator)", "Sound Waves"])
+    if st.button("Submit Chapter 4"):
+        if q4 == "Rossby to Kelvin wave reflections (Delayed Oscillator)": mark_completed("Ch4")
+        else: st.error("Incorrect. Review the Delayed Oscillator model.")
+
+# --- CHAPTER 5 ---
+elif lesson_choice == "5. Climate Models":
+    st.title("Chapter 5: Climate Models")
+
+    tab1, tab2 = st.tabs(["Constructing the Model", "Grids & Parameterization"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Constructing a Climate Model</h3>
+        <p><b>Components:</b> A full GCM (General Circulation Model) couples an Atmospheric model, an Ocean model, Land surface (vegetation), and Cryosphere (snow/ice).</p>
+        <p><b>The Hierarchy:</b> Models range from simple 1D Energy Balance Models to complex 3D fully coupled spectral models.</p>
+        <p><b>Climate Drift:</b> Early coupled models would 'drift' from reality due to minor imbalances, requiring flux adjustments. Modern models evaluate present-day climatology against observations to prevent this.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Resolution & Parameterization</h3>
+        <p><b>Grids:</b> Models use numerical representations (Finite-difference grids or spectral equations) processed on parallel computer architectures.</p>
+        <p><b>Parameterization:</b> Many physical processes (like individual clouds, mixing, dry/moist convection) are smaller than the model's grid boxes (sub-grid scale). These must be 'parameterized'—approximated based on larger-scale variables.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q5 = st.radio("What must be done to processes like cloud formation that are too small for a model's grid?", ["They are ignored", "They are Parameterized", "They are calculated perfectly using quantum computing"])
+    if st.button("Submit Chapter 5"):
+        if q5 == "They are Parameterized": mark_completed("Ch5")
+        else: st.error("Incorrect. They must be parameterized (approximated).")
+
+# --- CHAPTER 6 ---
+elif lesson_choice == "6. Greenhouse Effect & Feedbacks":
+    st.title("Chapter 6: The Greenhouse Effect and Feedbacks")
+
+    tab1, tab2 = st.tabs(["Greenhouse Mechanics", "Climate Feedbacks"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Energy Balance & The Greenhouse Effect</h3>
+        <p><b>One-Layer Model:</b> The atmosphere is transparent to solar radiation but absorbs infrared emissions from the surface, re-radiating heat back down. This basic greenhouse effect raises global average temperatures significantly above what they would be otherwise.</p>
+        <p><b>Transient vs Equilibrium:</b> Equilibrium response is the final temperature after CO2 doubling. Transient response is the immediate, time-dependent change, which is slower due to the ocean's massive heat capacity.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Climate Feedbacks & Sensitivity</h3>
+        <p><b>Climate Sensitivity:</b> The total temperature change resulting from a forcing, amplified or dampened by feedbacks.</p>
+        <ul>
+            <li><b>Water Vapor (+):</b> Warmer air holds more moisture (a GHG), amplifying warming.</li>
+            <li><b>Snow/Ice Albedo (+):</b> Melting ice reveals dark water/land, absorbing more heat.</li>
+            <li><b>Lapse Rate (-):</b> A warmer upper atmosphere radiates heat to space faster, dampening surface warming.</li>
+            <li><b>Clouds (?):</b> The largest source of uncertainty. Low clouds cool, high clouds warm.</li>
+            <li><b>Stratospheric Cooling:</b> As GHGs trap heat low, the stratosphere actually cools down.</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q6 = st.radio("Why does the Stratosphere cool during global warming?", ["Because the ozone layer is thickening", "Because GHGs trap heat in the troposphere below it", "Because clouds reflect heat away from it"])
+    if st.button("Submit Chapter 6"):
+        if q6 == "Because GHGs trap heat in the troposphere below it": mark_completed("Ch6")
+        else: st.error("Incorrect. The troposphere hogs the heat!")
+
+# --- CHAPTER 7 ---
+elif lesson_choice == "7. Global Warming Scenarios":
+    st.title("Chapter 7: Scenarios for Global Warming")
+
+    tab1, tab2, tab3 = st.tabs(["Forcings & Scenarios", "Spatial Patterns & Impacts", "Observations & The Future"])
+    
+    with tab1:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Greenhouse Gases, Aerosols & Scenarios</h3>
+        <p><b>Forcings:</b> GHGs provide positive forcing. Sulfate aerosols (from industry and volcanoes) provide negative forcing (cooling) and act as cloud condensation nuclei.</p>
+        <p><b>Scenarios:</b> We use standardized emissions pathways to project multi-model ensemble averages of future climates.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab2:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Spatial Patterns, Ice & Sea Level</h3>
+        <p><b>Poleward Amplification:</b> Warming is not uniform. The poles (especially the Arctic) warm much faster due to ice-albedo feedbacks.</p>
+        <p><b>Sea Level Rise:</b> Driven by oceanic thermal expansion and the melting of land ice (glaciers, ice sheets), drastically increasing extreme coastal events.</p>
+        <p><b>Oceans:</b> The ocean acts as a buffer, slowing down the warming process (Transient vs Equilibrium response).</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with tab3:
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Observed Change & The Road Ahead</h3>
+        <p><b>Observations to Date:</b> Current temperature trends are highly inconsistent with natural variability; anthropogenic forcing is the clear driver based on scale dependence and statistical models.</p>
+        <p><b>The Road Ahead:</b> Future impacts depend entirely on which emissions paths society chooses to take. The 'best-estimate prognosis' models multiple futures to help policymakers navigate risk.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("### 🧠 Knowledge Check")
+    q7 = st.radio("Why do the poles warm faster than the equator in global warming scenarios?", ["The ozone hole funnels heat there", "Poleward Amplification driven heavily by the Ice-Albedo feedback", "The oceans are shallower at the poles"])
+    if st.button("Submit Chapter 7"):
+        if q7 == "Poleward Amplification driven heavily by the Ice-Albedo feedback": mark_completed("Ch7")
+        else: st.error("Incorrect. Reflective ice melting exposes dark, heat-absorbing water.")
