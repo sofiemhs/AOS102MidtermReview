@@ -80,10 +80,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- SESSION STATE (Progress Tracking & Story Unlocking) ---
-if 'max_unlocked' not in st.session_state:
-    st.session_state.max_unlocked = 0
-
 # --- CHAPTER LIST ---
 ALL_CHAPTERS = [
     "0. Terminal Boot (Welcome)", 
@@ -96,9 +92,12 @@ ALL_CHAPTERS = [
     "7. Choosing the Future"
 ]
 
-# Set the initial page if it hasn't been set yet
-if 'nav_radio' not in st.session_state:
-    st.session_state.nav_radio = ALL_CHAPTERS[0]
+# --- SESSION STATE (Progress Tracking & Story Unlocking) ---
+if 'max_unlocked' not in st.session_state:
+    st.session_state.max_unlocked = 0
+
+if 'active_tab' not in st.session_state:
+    st.session_state.active_tab = ALL_CHAPTERS[0]
 
 # --- SIDEBAR NAVIGATION ---
 with st.sidebar:
@@ -113,13 +112,25 @@ with st.sidebar:
     # Slice the list to only show unlocked chapters
     available_chapters = ALL_CHAPTERS[:st.session_state.max_unlocked + 1]
     
-    # The radio button is tied directly to session_state.nav_radio
-    lesson_choice = st.radio("Access File:", available_chapters, key="nav_radio")
+    # Safely find the index of the active tab
+    if st.session_state.active_tab in available_chapters:
+        current_index = available_chapters.index(st.session_state.active_tab)
+    else:
+        current_index = 0
+        st.session_state.active_tab = available_chapters[0]
+    
+    # Render the radio button driven by index (fixes the Streamlit API Error)
+    lesson_choice = st.radio("Access File:", available_chapters, index=current_index)
+    
+    # Sync manual clicks back to session state
+    if lesson_choice != st.session_state.active_tab:
+        st.session_state.active_tab = lesson_choice
+        st.rerun()
     
     st.write("---")
     if st.button("System Reset (Restart Course)"):
         st.session_state.max_unlocked = 0
-        st.session_state.nav_radio = ALL_CHAPTERS[0]
+        st.session_state.active_tab = ALL_CHAPTERS[0]
         st.rerun()
 
 # --- HELPER FUNCTION FOR QUIZZES ---
@@ -141,12 +152,10 @@ def run_quiz(chapter_index, questions_and_answers):
             if score == 5:
                 if st.session_state.max_unlocked == chapter_index:
                     st.success("ACCESS GRANTED. Bypassing security... advancing to next file.")
-                    # Update unlock status
-                    st.session_state.max_unlocked = chapter_index + 1
-                    # Auto-advance the sidebar radio button to the next chapter
-                    st.session_state.nav_radio = ALL_CHAPTERS[chapter_index + 1]
-                    
                     st.balloons()
+                    # Unlock next chapter and auto-advance
+                    st.session_state.max_unlocked = chapter_index + 1
+                    st.session_state.active_tab = ALL_CHAPTERS[chapter_index + 1]
                     time.sleep(1.5) # Give the user time to see the success message
                     st.rerun()
                 else:
@@ -171,7 +180,7 @@ if lesson_choice == "0. Terminal Boot (Welcome)":
     
     if st.button("Acknowledge & Begin"):
         st.session_state.max_unlocked = max(st.session_state.max_unlocked, 1)
-        st.session_state.nav_radio = ALL_CHAPTERS[1] # Auto-advances to Chapter 1
+        st.session_state.active_tab = ALL_CHAPTERS[1] # Programmatically switch tabs
         st.rerun()
 
 elif lesson_choice == "1. The Signal and the Noise":
