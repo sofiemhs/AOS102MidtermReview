@@ -226,5 +226,3 @@ elif lesson_choice == "5. Global Warming & Feedbacks":
 if st.session_state.progress == 100:
     st.title("🏆 100% COMPLETE!")
     st.success("You have mastered Climate Dynamics! You're ready for GitHub.")
-
-Your slide deck and GitHub-ready Python code are both complete! This structure provides the deep detail from your notes with a highly professional and "pretty" design. Feel free to explore the interactive components!
