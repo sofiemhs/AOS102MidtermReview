@@ -4,29 +4,23 @@ import streamlit as st
 st.set_page_config(page_title="Climate Science Master Guide", page_icon="🌍", layout="wide")
 
 # --- CUSTOM CLIMATE THEME CSS ---
-# Colors: 
-# Deep Ocean Blue (Sidebar/Headers): #0c4a6e
-# Earthy Emerald Green (Buttons/Accents): #059669
-# Clear Sky Blue (Highlights): #0ea5e9
-# Cloud White (Cards): #ffffff
-# Deep Slate (Text for high contrast): #0f172a
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600;700&display=swap');
     
     html, body, [class*="css"]  {
         font-family: 'Open Sans', sans-serif;
-        color: #0f172a; /* High contrast text */
+        color: #000000 !important; /* All text black */
     }
     
     h1, h2, h3, h4, h5 {
         font-family: 'Merriweather', serif;
-        color: #0c4a6e; /* Deep Ocean Blue */
+        color: #000000 !important; /* All text black */
     }
 
-    /* Main background - very light icy blue */
+    /* Main background - Darker Aquamarine */
     .stApp {
-        background-color: #f0f9ff; 
+        background-color: #40B5AD; 
     }
     
     /* Buttons */
@@ -35,7 +29,7 @@ st.markdown("""
         border-radius: 8px;
         height: 3em;
         background-color: #059669; /* Earthy Emerald */
-        color: #ffffff !important; /* Pure white text for contrast */
+        color: #000000 !important; /* All text black */
         font-weight: bold;
         border: none;
         transition: 0.3s;
@@ -52,26 +46,41 @@ st.markdown("""
         background-color: #ffffff;
         padding: 25px;
         border-radius: 12px;
-        border-left: 6px solid #0ea5e9; /* Sky blue accent */
+        border-left: 6px solid #005c5c; /* Deep aquamarine accent */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         margin-bottom: 20px;
-        color: #0f172a; /* Explicit dark text */
+        color: #000000 !important; /* All text black */
     }
     
     .lesson-card h3 {
         margin-top: 0;
-        color: #0c4a6e;
+        color: #000000 !important; /* All text black */
     }
 
     .lesson-card li {
         margin-bottom: 8px;
+        color: #000000 !important;
+    }
+    
+    .lesson-card p {
+        color: #000000 !important;
     }
 
     /* Info panels */
     .stAlert {
-        background-color: #e0f2fe;
-        color: #0c4a6e;
-        border: 1px solid #bae6fd;
+        background-color: #7cebeb; /* Lighter aquamarine for readability */
+        color: #000000 !important; /* All text black */
+        border: 1px solid #40B5AD;
+    }
+    
+    /* Force sidebar text to be black */
+    .st-emotion-cache-16txtl3 p {
+        color: #000000 !important;
+    }
+    
+    /* Force general markdown text to be black */
+    .stMarkdown p, .stMarkdown li {
+        color: #000000 !important;
     }
 </style>
 """, unsafe_allow_html=True)
