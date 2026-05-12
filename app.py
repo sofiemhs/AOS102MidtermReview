@@ -75,15 +75,17 @@ st.markdown("""
 CURRICULUM = {
     "1. Overview of Climate Variability": {
         "pages": [
-            "1.1 Concept: Weather, Climate, & Anomalies", 
-            "1.2 Concept: Drivers & Greenhouse Gases", 
-            "1.3 Concept: Model Hierarchy & Grid Boxes", 
-            "1.4 Concept: IPCC & Emissions Pathways",
-            "1.5 Concept: Paleoclimate & Ice Cores",
-            "1.6 Model: Smoothing Data",
-            "1.7 Knowledge Check"
+            "1.1 Concept: Correlation vs. Causation",
+            "1.2 Concept: Weather, Climate, & Anomalies", 
+            "1.3 Concept: Drivers & Greenhouse Gases", 
+            "1.4 Concept: Model Hierarchy & Grid Boxes", 
+            "1.5 Concept: IPCC & Emissions Pathways",
+            "1.6 Concept: Paleoclimate & Ice Cores",
+            "1.7 Model: Smoothing Data",
+            "1.8 Knowledge Check"
         ],
         "quiz_pool": [
+            {"q": "According to the notes, what is the danger of assuming causation from correlation?", "opts": ["It is always accurate.", "There could be a third factor involved or it could be by chance (e.g., cheese consumption and engineering degrees).", "Correlation is mathematically equivalent to causation."], "ans": "There could be a third factor involved or it could be by chance (e.g., cheese consumption and engineering degrees)."},
             {"q": "How does the professor define 'climate' compared to 'weather'?", "opts": ["Weather is a boundary value problem, climate is chaotic.", "Weather is a particular event, while climate is the probability of an event occurring.", "There is no difference."], "ans": "Weather is a particular event, while climate is the probability of an event occurring."},
             {"q": "What is an 'anomaly' in climate science?", "opts": ["A malfunctioning weather satellite.", "A departure from normal climatological conditions for a specified time period.", "A sudden spike in CO2 emissions."], "ans": "A departure from normal climatological conditions for a specified time period."},
             {"q": "Which of the following is an example of internal climate variability?", "opts": ["Changes in Earth's orbit.", "El Niño and the North Atlantic Oscillation.", "Volcanic eruptions."], "ans": "El Niño and the North Atlantic Oscillation."},
@@ -152,6 +154,7 @@ CURRICULUM = {
             "4.6 Knowledge Check"
         ],
         "quiz_pool": [
+            {"q": "During La Niña, what happens to the trade winds and ocean currents?", "opts": ["Trade winds weaken, eastward PGF dominates.", "Trade winds strengthen, westward wind stress exceeds eastward PGF causing anomalous westward currents.", "Trade winds reverse, flowing west to east."], "ans": "Trade winds strengthen, westward wind stress exceeds eastward PGF causing anomalous westward currents."},
             {"q": "Under normal Pacific conditions, how does the thermocline depth in the west compare to the east?", "opts": ["It is completely flat.", "It is about 100m shallower in the west.", "It is about 100m deeper in the west."], "ans": "It is about 100m deeper in the west."},
             {"q": "What physical mechanism balances the westward wind stress in the Pacific ocean under normal conditions?", "opts": ["The eastward pressure gradient force in the ocean.", "The gravitational pull of the moon.", "The Coriolis force exactly at the equator."], "ans": "The eastward pressure gradient force in the ocean."},
             {"q": "How did Jakob Bjerknes describe the primary feedback of the Walker circulation?", "opts": ["Winds are completely independent of sea surface temperature.", "An increase in easterly winds increases upwelling and the east-west temperature contrast, which in turn causes the winds.", "Rainfall suppresses the trade winds."], "ans": "An increase in easterly winds increases upwelling and the east-west temperature contrast, which in turn causes the winds."},
@@ -176,6 +179,8 @@ CURRICULUM = {
             "5.8 Knowledge Check"
         ],
         "quiz_pool": [
+            {"q": "What are the three main roles for clouds and convection in the climate system?", "opts": ["Creating wind, blocking cosmic rays, and cooling the ocean.", "Heating the atmosphere, reflecting solar radiation (albedo), and trapping infrared radiation (greenhouse effect).", "Absorbing UV, reflecting IR, and producing ozone."], "ans": "Heating the atmosphere, reflecting solar radiation (albedo), and trapping infrared radiation (greenhouse effect)."},
+            {"q": "In the detailed radiation budget, how much incoming solar radiation is reflected by clouds, aerosols, and atmospheric gases?", "opts": ["30 W/m2", "107 W/m2", "77 W/m2"], "ans": "77 W/m2"},
             {"q": "In the global average energy balance, what is the approximate incoming solar radiation at the top of the atmosphere?", "opts": ["1367 W/m2", "342 W/m2", "168 W/m2"], "ans": "342 W/m2"},
             {"q": "What defines 'Radiative Forcing' ($G$) in the professor's climate model?", "opts": ["The physical force of the wind on the ocean.", "The energy imbalance at the top of the atmosphere before temperature changes to restore balance.", "The amount of solar radiation reflected by clouds."], "ans": "The energy imbalance at the top of the atmosphere before temperature changes to restore balance."},
             {"q": "In the one-layer atmosphere model, what is the 'normal' climatological absorptivity ($\epsilon_a$) of the atmosphere to surface IR?", "opts": ["0.31", "0.50", "0.90"], "ans": "0.90"},
@@ -195,10 +200,13 @@ CURRICULUM = {
             "6.3 Concept: Emissions vs. Concentrations & The Gap", 
             "6.4 Concept: Global-Average Response & Ensembles",
             "6.5 Concept: Commitment & Long-Term Sea Level Rise",
-            "6.6 Model: Constant Composition Commitment",
-            "6.7 Knowledge Check"
+            "6.6 Model: Sea Level Dynamics",
+            "6.7 Model: Constant Composition Commitment",
+            "6.8 Knowledge Check"
         ],
         "quiz_pool": [
+            {"q": "For a long-lived greenhouse gas, what happens to the concentration if human emissions are kept completely constant?", "opts": ["The concentration increases at a constant rate.", "The concentration increases at an increasing rate.", "The concentration stabilizes."], "ans": "The concentration increases at a constant rate."},
+            {"q": "What is the formula for calculating the change in sea level depth (dh) due to thermal expansion?", "opts": ["dh/h = epsilon_T * dT", "dh = mass * volume", "dh/dT = rho * h"], "ans": "dh/h = epsilon_T * dT"},
             {"q": "What is the primary global effect of sulfate aerosols on the climate system?", "opts": ["Net cooling tendency by reflection of sunlight.", "Net warming by trapping infrared radiation.", "Destruction of the ozone layer."], "ans": "Net cooling tendency by reflection of sunlight."},
             {"q": "How does the residence time of aerosols compare to long-lived greenhouse gases?", "opts": ["They have very short residence times compared to long-lived GHGs.", "They stay in the atmosphere for centuries.", "They are permanently trapped in the stratosphere."], "ans": "They have very short residence times compared to long-lived GHGs."},
             {"q": "In CMIP5, what does the '8.5' in the RCP 8.5 scenario represent?", "opts": ["8.5 degrees of warming by 2100.", "8.5 W/m2 radiative forcing in 2100.", "8.5 meters of sea level rise."], "ans": "8.5 W/m2 radiative forcing in 2100."},
@@ -335,10 +343,28 @@ st.title(page)
 
 # --- CHAPTER 1 CONTENT ---
 if chapter == "1. Overview of Climate Variability":
-    if page == "1.1 Concept: Weather, Climate, & Anomalies":
+    if page == "1.1 Concept: Correlation vs. Causation":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.1: Weather vs. Climate</h3>
+        <h3>Log Entry 1.1: Correlation Does Not Imply Causation</h3>
+        <p>In climate science, determining the cause of observed trends is critical. Just because two variables track each other perfectly does not mean one causes the other.</p>
+        <p>Say variable "a" is correlated to variable "b". The possibilities are:</p>
+        <ul>
+            <li>"a" could cause "b"</li>
+            <li>"b" could cause "a"</li>
+            <li>Correlation by chance</li>
+            <li>A third factor is involved in their correlation</li>
+        </ul>
+        <br><br><br>
+        <p><b>Example:</b> The per capita consumption of mozzarella cheese correlates almost perfectly with the number of civil engineering doctorates awarded between 2000 and 2009. This is a spurious correlation by chance, not a physical mechanism.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "1.2 Concept: Weather, Climate, & Anomalies":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 1.2: Weather vs. Climate</h3>
         <p>To begin analysis, we must firmly separate weather from climate. According to the foundational texts:</p>
         <ul>
             <li><b>Weather:</b> The state of the atmosphere and ocean at a given moment. It is a <i>particular event</i>.</li>
@@ -350,10 +376,10 @@ if chapter == "1. Overview of Climate Variability":
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.2 Concept: Drivers & Greenhouse Gases":
+    elif page == "1.3 Concept: Drivers & Greenhouse Gases":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.2: Drivers of Variation</h3>
+        <h3>Log Entry 1.3: Drivers of Variation</h3>
         <p>Climate varies on many timescales, driven by different physical processes:</p>
         <ul>
             <li><b>Internal Variability:</b> Natural wobbles like El Niño, the North Atlantic Oscillation, and the Pacific Decadal Oscillation.</li>
@@ -372,10 +398,10 @@ if chapter == "1. Overview of Climate Variability":
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.3 Concept: Model Hierarchy & Grid Boxes":
+    elif page == "1.4 Concept: Model Hierarchy & Grid Boxes":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.3: Modeling the System</h3>
+        <h3>Log Entry 1.4: Modeling the System</h3>
         <p>Because the Earth System involves interlocking physical, chemical, and biological aspects, scientists use a hierarchy of mathematical models to simulate it:</p>
         <ul>
             <li><b>Simple Energy Balance Models:</b> Illustrate the fundamental importance of energy balance to the climate state.</li>
@@ -388,10 +414,10 @@ if chapter == "1. Overview of Climate Variability":
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.4 Concept: IPCC & Emissions Pathways":
+    elif page == "1.5 Concept: IPCC & Emissions Pathways":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.4: Policy and Projections</h3>
+        <h3>Log Entry 1.5: Policy and Projections</h3>
         <p>Climate models guide major policy bodies, notably the <b>Intergovernmental Panel on Climate Change (IPCC)</b>. Established in 1988 by UNEP and WMO, the IPCC does not conduct research but reviews it across three Working Groups: WG1 (Physical Science), WG2 (Impacts/Adaptation), and WG3 (Mitigation).</p>
         <br><br><br>
         <p><b>The Paris Agreement (2015, COP21):</b> Aims to hold global temperature rise to "well below 2°C above preindustrial levels" utilizing Nationally Determined Contributions (NDCs). A major gap remains between these NDCs and a 2°C pathway.</p>
@@ -406,10 +432,10 @@ if chapter == "1. Overview of Climate Variability":
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.5 Concept: Paleoclimate & Ice Cores":
+    elif page == "1.6 Concept: Paleoclimate & Ice Cores":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.5: Deep Time</h3>
+        <h3>Log Entry 1.6: Deep Time</h3>
         <p>The distant geological past featured climates significantly warmer than present, with higher CO2 levels. Over millions of years, deposition sequestered this carbon as fossil fuels. Humans are returning this CO2 to the atmosphere over a microscopically short period.</p>
         <br><br><br>
         <p>For the past several hundred thousand years, we rely on Antarctic ice cores. Scientists analyze the isotope <b>Deuterium (D)</b>. Water molecules containing heavier isotopes evaporate less easily and condense more easily depending on temperature, allowing scientists to estimate historical temperatures.</p>
@@ -418,53 +444,57 @@ if chapter == "1. Overview of Climate Variability":
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.6 Model: Smoothing Data":
+    elif page == "1.7 Model: Smoothing Data":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Modeling Bay: Moving Averages</h3>
-        <p>To see the Anthropogenic trend (the signal), we must smooth out the internal variability (the noise). Watch what happens to the raw data when we apply a 10-year moving average in Python.</p>
+        <h3>Modeling Bay: AOS102 Problem Set 1B - Smoothing Global Temp Anomalies</h3>
+        <p>In this interactive module based directly on your PbSet 1B, you will analyze global average surface temperature anomalies from 1850 to 2025. You can adjust the <b>moving average window</b> to separate natural internal variability (noise) from the long-term anthropogenic trend (signal).</p>
         </div>
         """, unsafe_allow_html=True)
         
-        st.code('''
-import pandas as pd # Import the pandas library to store and manipulate our data in a table structure
-import numpy as np # Import the numpy library to handle complex mathematical arrays and random number generation
-
-# Simulate 50 years of noisy temperature data
-years = np.arange(1970, 2020) # Create an array of sequential years starting at 1970 and ending at 2019
-noise = np.random.normal(0, 0.5, len(years)) # Generate random temperature variations (mean 0, standard deviation 0.5) for every single year
-signal = 0.02 * (years - 1970) # Calculate the true warming trend (the signal), increasing by exactly 0.02 degrees each year
-raw_temp = signal + noise # Add the random noise and the true signal together to create realistic chaotic weather data
-
-# Store the simulated data in a structured DataFrame table
-df = pd.DataFrame({'Year': years, 'Raw Temp': raw_temp}) 
-
-# Apply a 10-year rolling average to smooth the noise
-df['Smoothed Trend'] = df['Raw Temp'].rolling(window=10, center=True).mean() # Take a 10-year sliding window, calculate the average, and center it to reveal the hidden climate signal
-        ''', language='python')
+        window_size = st.slider("Select Moving Average Length (Years):", min_value=5, max_value=80, value=40, step=1)
         
-        if st.button("Run Code", type="primary"):
+        if st.button("Run Smoothing Analysis", type="primary"):
             st.markdown("### Output Analysis:")
-            years = np.arange(1970, 2020)
-            np.random.seed(42) 
-            noise = np.random.normal(0, 0.4, len(years))
-            signal = 0.02 * (years - 1970) 
-            raw_temp = signal + noise
-            df = pd.DataFrame({'Raw Temp (Noise)': raw_temp}, index=years)
-            df['Smoothed Trend (Signal)'] = df['Raw Temp (Noise)'].rolling(window=10, center=True).mean()
+            
+            # Simulate historical data resembling NCEI 1850-2025 global temp anomaly
+            years = np.arange(1850, 2026)
+            np.random.seed(42)
+            trend = 0.00008 * (years - 1850)**2 - 0.2  
+            noise = np.random.normal(0, 0.15, len(years))
+            raw_temp = trend + noise
+            # specific 1877/1878 spike from homework
+            raw_temp[1877-1850] += 0.4
+            raw_temp[1878-1850] += 0.4
+            
+            df = pd.DataFrame({'Raw Temp Anomaly': raw_temp}, index=years)
+            df[f'{window_size}-Year Moving Average'] = df['Raw Temp Anomaly'].rolling(window=window_size, center=True).mean()
             
             st.line_chart(df)
             
-            st.info("""
-            **Graph Analysis:**
+            departures = df['Raw Temp Anomaly'] - df[f'{window_size}-Year Moving Average']
+            std_dev = departures.std()
             
-            * **Raw Temp (Noise):** Notice how violently this line spikes up and down from year to year. This represents internal climate variability (like El Niño or La Niña). If you only looked at a short 3-to-4 year chunk of this line, you might falsely conclude the planet was rapidly cooling or rapidly warming. This chaotic short-term data represents "weather."
-            * **Smoothed Trend (Signal):** By calculating a 10-year rolling average, we strip away the short-term, year-to-year chaos. What remains is a much smoother, steady upward slope. This reveals the underlying anthropogenic forcing (human-caused warming trend) of exactly 0.02 degrees per year that was completely hidden beneath the noise. This long-term statistical average represents "climate."
+            st.markdown(f"**Departures from the {window_size}-Year Moving Average:**")
+            
+            dep_df = pd.DataFrame({'Departures': departures}, index=years)
+            dep_df['+1 Std Dev'] = std_dev
+            dep_df['-1 Std Dev'] = -std_dev
+            dep_df['+2 Std Dev'] = 2 * std_dev
+            dep_df['-2 Std Dev'] = -2 * std_dev
+            
+            st.line_chart(dep_df)
+            
+            st.info(f"""
+            **Homework Analysis (PbSet 1B):**
+            * The standard deviation of the departures is **{std_dev:.3f} °C**.
+            * If this data followed a perfect normal (Gaussian) distribution, we would expect about 68% of the data to fall within $\pm 1$ standard deviation, and only exceed $\pm 2$ standard deviations about 4.6% of the time.
+            * Notice the extreme positive departures in **1877 and 1878**. As noted in the homework, these years experienced an exceptionally strong global El Niño event, driving massive internal variability spikes far beyond the standard deviation!
             """)
             
         render_next_button(chapter, page)
 
-    elif page == "1.7 Knowledge Check":
+    elif page == "1.8 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 2 CONTENT ---
@@ -492,8 +522,9 @@ elif chapter == "2. Basics of Global Climate":
         <h3>Log Entry 2.2: The Radiative Imbalance</h3>
         <p>Earth is powered by Solar radiation (Shortwave). The Solar Constant ($S_0$) is roughly 1366 W/m<sup>2</sup>. Because Earth is a sphere and half is in shadow, the average solar flux reaching the top of the atmosphere is about <b>342 W/m<sup>2</sup></b>.</p>
         <p><b>Albedo:</b> Earth's global average planetary albedo is 0.31 (31% of incident solar radiation is reflected back to space). Deep clouds reflect heavily (~0.9), while oceans absorb deeply (albedo ~0.08). The remaining solar radiation—nearly 50%—is absorbed directly by the surface.</p>
-        <p><b>Stefan-Boltzmann Law:</b> The Earth must balance this absorbed heat by emitting Infrared (IR) radiation back to space. Emission depends strictly on temperature ($E = \sigma T^4$). Because IR emission scales to the 4th power of temperature, the planet is highly effective at shedding excess heat as it warms.</p>
-        <p><b>The Greenhouse Effect:</b> Upward IR emitted from the surface is mostly trapped in the atmosphere by greenhouse gases. The atmosphere warms and re-emits this IR both upward to space and downward to the surface. This downward emission results in significant additional warming of the surface compared to an atmosphere with no IR absorption.</p>
+        <p><b>Stefan-Boltzmann Law:</b> The Earth must balance this absorbed heat by emitting Infrared (IR) radiation back to space. The total energy flux integrated across all wavelengths of light for a blackbody emitter depends on absolute temperature T by the Stefan-Boltzmann law: $R = \sigma T^4$, where $\sigma = 5.67 \times 10^{-8} Wm^{-2}K^{-4}$ and T is in Kelvin.</p>
+        <p>Actual surfaces or gases do not absorb or emit as a perfect blackbody, so we define an emissivity ($\epsilon$) for each substance. Since absorptivity equals emissivity, the equation becomes $R = \epsilon \sigma T^4$. At the top of the atmosphere, in the global average and for a steady climate, IR emitted balances incoming solar. Global warming involves a slight imbalance where less IR is emitted from the top, leading to a slow warming.</p>
+        <p><b>Seasons:</b> It is also important to note that the real reason we have seasons is due to the tilt of the Earth affecting sunlight distribution, not the distance from the sun.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -538,7 +569,8 @@ elif chapter == "2. Basics of Global Climate":
             <li><b>Land:</b> Holds ~5.1%.</li>
         </ol>
         <p>The <b>Atmosphere</b> is a substantially smaller carbon reservoir, holding only 1.3%. Because it is so small, relatively tiny net carbon fluxes from human emissions have massive impacts.</p>
-        <p><b>Anthropogenic Flux:</b> Fossil fuels emit roughly 8 to 10 PgC/yr (Petagrams of Carbon per year). Land use change adds roughly another 1.6 PgC/yr. Fortunately, only about half of this carbon remains in the atmosphere; the rest is taken up by the ocean and land vegetation sinks. However, atmospheric concentrations of CO2 still rise by about <b>1 ppm for each 2.1 PgC</b> that remains in the atmosphere.</p>
+        <p><b>Anthropogenic Flux:</b> According to recent carbon budget data (e.g., Friedlingstein et al. 2023), carbon emissions are balanced by sinks. Specifically: Fossil Emissions ($E_{FOS}$) + Net Land-use Change Emissions ($E_{LUC}$) = Atmospheric Growth ($G_{ATM}$) + Land Sink ($S_{LAND}$) + Ocean Sink ($S_{OCEAN}$). These are measured in gigatons of carbon per year ($1 Gt = 1 Pg$). This imbalance implies a rising concentration, and the rate of increase has been increasing over decades.</p>
+        <p>Fortunately, only about half of this carbon remains in the atmosphere; the rest is taken up by the ocean and land vegetation sinks. However, atmospheric concentrations of CO2 still rise by about <b>1 ppm for each 2.1 PgC</b> that remains in the atmosphere.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -546,56 +578,58 @@ elif chapter == "2. Basics of Global Climate":
     elif page == "2.6 Model: Carbon Accumulation":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Modeling Bay: Emissions to Concentrations</h3>
-        <p>Using the professor's conversion factor (1 ppm = 2.1 PgC), let's mathematically model how decades of fossil fuel emissions accumulate in the atmosphere, accounting for the ~50% absorption rate by the ocean and land sinks.</p>
+        <h3>Modeling Bay: AOS102 Problem Set 2 - Carbon Scenarios</h3>
+        <p>This interactive model integrates global CO2 emissions into atmospheric concentrations from 2024 to 2050 using the exact parameters from your homework.</p>
+        <ul>
+            <li><b>Scenario A:</b> Emissions grow at the historical rate (approx. 0.52 GtCO2/yr per year). Human emissions each year are roughly 17 Gt/yr larger in 2024 than they were in 1990.</li>
+            <li><b>Scenario B:</b> Emissions are suddenly capped at 2024 levels (39.6 Gt/yr), staying constant till 2050.</li>
+            <li><b>Scenario C:</b> Emissions decrease linearly to zero in 2050.</li>
+            <li><b>Scenario D:</b> Emissions decrease linearly to zero in 2030 (highly optimistic) and then remain zero.</li>
+        </ul>
         </div>
         """, unsafe_allow_html=True)
         
-        st.code('''
-import pandas as pd
-import numpy as np
-
-# Simulate years 2000 to 2050
-years = np.arange(2000, 2051)
-
-# Assume baseline emissions of 8.0 PgC/yr in 2000, growing steadily
-emissions_PgC = 8.0 + 0.15 * (years - 2000)
-
-# Only ~50% of emitted carbon remains in the atmosphere (the rest goes to sinks)
-remains_in_atm = emissions_PgC * 0.50
-
-# Conversion rule: Atmospheric concentrations rise 1 ppm for each 2.1 PgC
-ppm_increase_per_year = remains_in_atm / 2.1
-
-# Calculate cumulative accumulation starting from ~370 ppm in the year 2000
-co2_ppm = np.zeros(len(years))
-co2_ppm[0] = 370.0
-
-for i in range(1, len(years)):
-    co2_ppm[i] = co2_ppm[i-1] + ppm_increase_per_year[i]
-
-df = pd.DataFrame({'CO2 Concentration (ppm)': co2_ppm}, index=years)
-        ''', language='python')
+        frac_remain = st.slider("Fraction of Emissions Remaining in Atmosphere (Default 0.47):", 0.10, 1.00, 0.47, 0.01)
         
-        if st.button("Run Code", type="primary"):
-            st.markdown("### Output Analysis:")
-            years = np.arange(2000, 2051)
-            emissions_PgC = 8.0 + 0.15 * (years - 2000)
-            remains_in_atm = emissions_PgC * 0.50
-            ppm_increase_per_year = remains_in_atm / 2.1
+        if st.button("Simulate Scenarios", type="primary"):
+            years = np.arange(2024, 2051)
             
-            co2_ppm = np.zeros(len(years))
-            co2_ppm[0] = 370.0
-            for i in range(1, len(years)):
-                co2_ppm[i] = co2_ppm[i-1] + ppm_increase_per_year[i]
+            emissions_A = 39.6 + 0.52 * (years - 2024)
+            emissions_B = np.full(len(years), 39.6)
+            emissions_C = 39.6 - 39.6 * (years - 2024) / (2050 - 2024)
+            emissions_D = np.where(years <= 2030, 39.6 - 39.6 * (years - 2024) / (2030 - 2024), 0.0)
+            
+            def calc_concentration(emissions_array):
+                conc = np.zeros(len(years))
+                conc[0] = 424.6  # 2024 starting value 
+                for i in range(1, len(years)):
+                    conc[i] = conc[i-1] + frac_remain * (emissions_array[i] / 7.8)
+                return conc
                 
-            df = pd.DataFrame({'CO2 Concentration (ppm)': co2_ppm}, index=years)
+            conc_A = calc_concentration(emissions_A)
+            conc_B = calc_concentration(emissions_B)
+            conc_C = calc_concentration(emissions_C)
+            conc_D = calc_concentration(emissions_D)
             
-            st.line_chart(df)
+            df_conc = pd.DataFrame({
+                'Scenario A (Historical Growth)': conc_A,
+                'Scenario B (Constant 2024 Levels)': conc_B,
+                'Scenario C (Zero by 2050)': conc_C,
+                'Scenario D (Zero by 2030)': conc_D
+            }, index=years)
             
-            st.info("""
-            **Graph Analysis:**
-            Notice that the CO2 concentration does not just go up—it curves upward at an accelerating rate. Because raw emissions (PgC/yr) are increasing every year, the amount added to the atmosphere after the 50% sink reduction *also* increases every year. At a conversion rate of 2.1 PgC per 1 ppm, we see atmospheric concentrations crossing the critical 400 ppm boundary and accelerating rapidly towards 2050.
+            st.line_chart(df_conc)
+            
+            ppm_diff = conc_A[-1] - conc_D[-1]
+            gt_diff = ppm_diff * 7.8
+            cost_trillions = gt_diff * 100 / 1000 
+            
+            st.info(f"""
+            **Homework Analysis (PbSet 2):**
+            * By 2050, **Scenario A** reaches a staggering **{conc_A[-1]:.1f} ppm**, while the aggressive **Scenario D** stabilizes at **{conc_D[-1]:.1f} ppm**.
+            * The conversion factor used here is exactly $1 \\text{ ppm} = 7.8 \\text{ GtCO}_2$. 
+            * If you changed the fraction remaining from the historical average of $0.47$ (the average percent for 2013-2022) to a higher value (like $0.55$), it implies the ocean and land carbon sinks are losing their capacity to absorb human emissions. This would drastically amplify the 2100 concentrations for the higher pathways (A and B).
+            * **Carbon Capture Economics:** To manually bring Scenario A down to Scenario D's {conc_D[-1]:.1f} ppm in 2050, you would have to extract **{gt_diff:.1f} Gigatons** of CO2. At an optimistic \$100/tonne, this would cost roughly **\${cost_trillions:.1f} Trillion**!
             """)
             
         render_next_button(chapter, page)
@@ -755,9 +789,10 @@ elif chapter == "4. El Niño (ENSO)":
         st.markdown("""
         <div class="lesson-card">
         <h3>Log Entry 4.2: The Extreme Phases</h3>
-        <p><b>El Niño (Warm Phase):</b> The Trade Winds weaken, collapse, or reverse. The unbalanced eastward pressure gradient force in the ocean causes anomalous eastward currents. The deep thermocline from the west sloshes east, deepening the thermocline in the Eastern Pacific. Upwelling still occurs, but it brings up <i>less cold</i> water than normal, causing warmer SSTs and shifting rainfall eastward.</p>
+        <p><b>El Niño (Warm Phase):</b> Warmer SST in the east; rainfall tends to spread east. The Trade Winds weaken. The unbalanced eastward Pressure Gradient Force (PGF) in the ocean causes anomalous currents in the vertical average through the layer above the thermocline. The thermocline deepens in the east. Upwelling on the equator in the east Pacific brings up water that is less cold than normal.</p>
         <br><br><br>
-        <p><b>La Niña (Cold Phase):</b> The opposite extreme. Trade Winds strengthen beyond normal. The westward wind stress severely exceeds the eastward ocean pressure gradient, creating anomalous westward currents. The thermocline shallows dramatically in the east, and upwelling brings up water that is <i>colder</i> than normal. Rainfall concentrates heavily in the far western Pacific.</p>
+        <p><b>La Niña (Cold Phase):</b> Cooler SST in the east; rainfall concentrated in the west. Trade Winds strengthen. The westward wind stress exceeds the eastward PGF in the ocean, creating anomalous currents along the Equator. The thermocline shallows in the east. Upwelling on the equator in the east Pacific brings up water colder than normal.</p>
+        <br><br><br>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -819,11 +854,12 @@ elif chapter == "5. Greenhouse Effect & Feedbacks":
         <p>To understand feedbacks, we must establish the baseline 1-Layer Energy Balance model in terms of Watts per square meter ($W/m^2$).</p>
         <br><br><br>
         <ul>
-            <li><b>Incoming Solar:</b> The average solar radiation reaching the top of the atmosphere is roughly <b>342 $W/m^2$</b>.</li>
-            <li><b>Reflection:</b> About 107 $W/m^2$ is immediately reflected back to space by clouds and the surface (albedo).</li>
+            <li><b>Incoming Solar:</b> The average solar radiation reaching the top of the atmosphere is <b>342 $W/m^2$</b>.</li>
+            <li><b>Reflection:</b> 107 $W/m^2$ is reflected back to space (77 by clouds, aerosol, and atmospheric gases; 30 by the surface).</li>
             <li><b>Absorption:</b> The remaining solar radiation is absorbed: 67 $W/m^2$ by the atmosphere, and <b>168 $W/m^2$</b> absorbed directly by the surface.</li>
         </ul>
-        <p>To maintain balance, the Earth must re-emit an equal amount of energy to space. In the 1-layer atmospheric model, we assume "normal" climatology where the atmosphere absorbs roughly <b>90%</b> ($\epsilon_a = 0.90$) of the infrared radiation (IR) emitted by the surface. The atmosphere then radiates IR both up to space and back down to the surface, creating a massive 34°C difference compared to an Earth with no atmosphere.</p>
+        <p>Surface energy fluxes include Surface Radiation (390 $W/m^2$), Back Radiation from the atmosphere (324 $W/m^2$), Latent Heat via Evapotranspiration (78 $W/m^2$), and Thermals (24 $W/m^2$).</p>
+        <p>To maintain balance, the Earth must re-emit an equal amount of energy to space. Outgoing Longwave Radiation totals 235 $W/m^2$, which consists of 165 emitted by the atmosphere, 30 emitted by clouds, and 40 escaping through the atmospheric window.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -864,6 +900,12 @@ elif chapter == "5. Greenhouse Effect & Feedbacks":
         <div class="lesson-card">
         <h3>Log Entry 5.5: The Complex Modifiers</h3>
         <p><b>Cloud Feedbacks (The Wildcard):</b> Clouds have opposing effects making them highly uncertain.</p>
+        <p>There are three main roles for clouds and convection:</p>
+        <ol>
+            <li>Heating of the atmosphere (through a deep layer).</li>
+            <li>Reflection of solar radiation (contributing to albedo).</li>
+            <li>Trapping of infrared radiation (contributing to the greenhouse effect).</li>
+        </ol>
         <br><br><br>
         <ul>
             <li><i>Low Clouds:</i> Tend to reflect heavy amounts of solar radiation (Net Cooling tendency).</li>
@@ -979,13 +1021,14 @@ elif chapter == "6. Global Warming Scenarios":
         st.markdown("""
         <div class="lesson-card">
         <h3>Log Entry 6.3: Filling the Atmosphere</h3>
-        <p>It is vital to understand the difference between emitting carbon and the total concentration sitting in the atmosphere. For a long-lived gas like CO2:</p>
+        <p>It is vital to understand the difference between emitting carbon and the total concentration sitting in the atmosphere. For a long-lived greenhouse gas:</p>
         <ul>
             <li><b>Increasing Emissions:</b> Concentration increases at an ever-faster rate.</li>
-            <li><b>Constant Emissions:</b> Concentration undergoes an ongoing, continuous increase.</li>
-            <li><b>Decreasing Emissions:</b> Concentration still increases, just less quickly.</li>
-            <li><b>Very Low Emissions:</b> Only then does concentration stabilization occur.</li>
+            <li><b>Constant Emissions:</b> Ongoing increase of concentration at a constant rate.</li>
+            <li><b>Decreasing Emissions:</b> Concentration increases, but at a decreased rate.</li>
+            <li><b>Very Low Emissions (Near Zero):</b> Concentration is capped and stabilization occurs.</li>
         </ul>
+        <br><br><br>
         <p>If emissions are not brought down quickly enough, CO2 will overshoot the stabilization target. Fixing an overshoot requires <b>negative emissions</b> (actively removing CO2 from the sky).</p>
         <p><b>The Emissions Gap:</b> The UNEP Emissions Gap Report explicitly calculates the massive difference between current Nationally Determined Contributions (NDCs) and the actual deep reductions required to keep global average warming under 2°C.</p>
         <br><br><br>
@@ -1010,13 +1053,61 @@ elif chapter == "6. Global Warming Scenarios":
         <h3>Log Entry 6.5: Unstoppable Momentum</h3>
         <p>What happens if we magically stop emissions right now?</p>
         <p><b>Constant Composition Commitment:</b> Simulations that instantly freeze radiative forcing at year 2000 (or 2100) levels prove that global warming is committed to continue. Temperatures will still slowly rise for decades.</p>
-        <p>This commitment is most visible in <b>Sea Level Rise</b>. The deep ocean has a massive heat capacity, and ice sheets take centuries to melt. Because of thermal expansion and land-ice melt, sea levels will experience massive long-term increases, continuing an ongoing rise long after CO2 concentrations are completely stabilized.</p>
+        <p>This commitment is most visible in <b>Sea Level Rise</b>. Sea levels are rising due to two distinct physical mechanisms:</p>
+        <ol>
+            <li><b>Land Ice Melt:</b> Massive glaciers and ice sheets situated on land (Greenland and Antarctica) melt and dump physically new water into the ocean basin.</li>
+            <li><b>Thermal Expansion:</b> The mass of the ocean equals area $\\times \\rho \\times h$. If mass and area are constant, while density decreases by $\\delta \\rho$, depth $h$ must change by $\\delta h$. This gives Equation 3.16: $h \\delta \\rho = -\\rho \\delta h$. Using the coefficient of thermal expansion $\\epsilon_T$ (percent density decrease per °C of temperature increase, with $\\epsilon_T = 2.7 \\times 10^{-4} C^{-1}$ near 22°C), we get $\\delta \\rho = -\\rho \\epsilon_T \\delta T$. This leads to Equation 3.17: $\\frac{\\delta h}{h} = \\epsilon_T \\delta T$. For example, a 300m upper ocean layer warming 3°C yields: $\\delta h = 300 \\times 2.7 \\times 10^{-4} C^{-1} \\times 3C = 0.24m$.</li>
+        </ol>
+        <p>Because of thermal expansion and land-ice melt, sea levels will experience massive long-term increases, continuing an ongoing rise long after CO2 concentrations are completely stabilized.</p>
         <br><br><br>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "6.6 Model: Constant Composition Commitment":
+    elif page == "6.6 Model: Sea Level Dynamics":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Modeling Bay: AOS102 Problem Set 2 - Sea Level Rise</h3>
+        <p>Using the exact equations from your homework, we will calculate the thermal expansion of the ocean and the melting rate of the Greenland Ice Sheet.</p>
+        <p><b>Thermal Expansion Formula:</b> $\\delta h / h_0 = \\epsilon_T \\delta T$</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        delta_T = st.slider("Global Ocean Temperature Increase (ΔT in °C):", 0.0, 10.0, 4.0, 0.1)
+        melt_rate_myr = st.slider("Greenland Surface Ice Melt Rate (m/yr):", 0.0, 5.0, 1.0, 0.1)
+        
+        if st.button("Calculate SLR Impacts", type="primary"):
+            h0_upper = 300.0
+            eps_upper = 2.7e-4
+            dh_upper = h0_upper * eps_upper * delta_T
+            
+            h0_deep = 4000.0
+            eps_deep = 1.5e-4
+            dh_deep = h0_deep * eps_deep * delta_T
+            
+            area_greenland_m2 = 1.69e6 * 1e6
+            active_area_m2 = 0.30 * area_greenland_m2
+            vol_melt_m3_yr = melt_rate_myr * active_area_m2
+            
+            area_ocean_m2 = 3.6e8 * 1e6
+            slr_m_yr = vol_melt_m3_yr / area_ocean_m2
+            slr_cm_decade = (slr_m_yr * 100) * 10
+            
+            st.success(f"**Thermal Expansion Results for a {delta_T:.1f}°C Warming:**")
+            st.write(f"**1. Upper Ocean ($h_0=300m$):** $\\delta h = 300 \\text{ m} \\times 2.7\\times 10^{-4} \\text{ °C}^{-1} \\times {delta_T} \\text{ °C} = $ **{dh_upper:.3f} meters**")
+            st.write(f"**2. Deep Ocean ($h_0=4000m$):** $\\delta h = 4000 \\text{ m} \\times 1.5\\times 10^{-4} \\text{ °C}^{-1} \\times {delta_T} \\text{ °C} = $ **{dh_deep:.3f} meters**")
+            st.write(f"**Total Thermal Expansion:** **{dh_upper + dh_deep:.3f} meters**")
+            
+            st.info(f"""
+            **Greenland Ice Sheet Melt Physics (PbSet 2 Q3):**
+            * Assuming a latent heat of fusion of $L_f = 3.3\\times10^5 \\text{ J/kg}$ and an ice density of roughly $900 \\text{ kg/m}^3$ ($0.9\\times 10^3 \\text{ kg/m}^3$).
+            * If the surface melt rate is {melt_rate_myr} m/yr over 30% of Greenland's $1.69\\times10^6 \\text{ km}^2$ area, we add {vol_melt_m3_yr:.2e} $\\text{m}^3$ of water to the ocean each year.
+            * Distributed across the World Ocean's $3.6\\times10^8 \\text{ km}^2$, this contributes **{slr_cm_decade:.3f} cm per decade** to global sea level rise!
+            """)
+            
+        render_next_button(chapter, page)
+
+    elif page == "6.7 Model: Constant Composition Commitment":
         st.markdown("""
         <div class="lesson-card">
         <h3>Modeling Bay: The Physics of Lag</h3>
@@ -1054,7 +1145,7 @@ df = pd.DataFrame({
 }, index=years)
         ''', language='python')
         
-        if st.button("Run Code", type="primary"):
+        if st.button("Run Code", type="primary", key="ccc_button"):
             st.markdown("### Output Analysis:")
             years = np.arange(2000, 2201)
             forcing = np.where(years <= 2050, 2.0 + 0.05 * (years - 2000), 2.0 + 0.05 * 50)
@@ -1085,7 +1176,7 @@ df = pd.DataFrame({
             
         render_next_button(chapter, page)
 
-    elif page == "6.7 Knowledge Check":
+    elif page == "6.8 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- FINAL EXAM ---
@@ -1093,3 +1184,4 @@ elif chapter == "Final Exam: Terminal Clearance":
     if page == "Final Knowledge Check":
         st.warning("WARNING: This is the final evaluation. Questions are pulled from all previous databanks.")
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=10)
+    
