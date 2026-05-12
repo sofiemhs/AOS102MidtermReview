@@ -906,14 +906,14 @@ elif chapter == "6. Global Warming Scenarios":
             slr_cm_decade = (slr_m_yr * 100) * 10
             
             st.success(f"**Thermal Expansion Results for a {delta_T:.1f}°C Warming:**")
-            st.write(f"**1. Upper Ocean ($h_0=300m$):** $\\delta h = 300 \\text{ m} \\times 2.7\\times 10^{-4} \\text{ °C}^{-1} \\times {delta_T} \\text{ °C} = $ **{dh_upper:.3f} meters**")
-            st.write(f"**2. Deep Ocean ($h_0=4000m$):** $\\delta h = 4000 \\text{ m} \\times 1.5\\times 10^{-4} \\text{ °C}^{-1} \\times {delta_T} \\text{ °C} = $ **{dh_deep:.3f} meters**")
+            st.write(f"**1. Upper Ocean ($h_0=300m$):** $\\delta h = 300 \\text{{ m}} \\times 2.7\\times 10^{{-4}} \\text{{ °C}}^{{-1}} \\times {delta_T} \\text{{ °C}} = $ **{dh_upper:.3f} meters**")
+            st.write(f"**2. Deep Ocean ($h_0=4000m$):** $\\delta h = 4000 \\text{{ m}} \\times 1.5\\times 10^{{-4}} \\text{{ °C}}^{{-1}} \\times {delta_T} \\text{{ °C}} = $ **{dh_deep:.3f} meters**")
             st.write(f"**Total Thermal Expansion:** **{dh_upper + dh_deep:.3f} meters**")
             
             st.info(f"""
             💡 **Simple Breakdown (Greenland Ice Sheet Melt Physics):**
-            * If the surface melt rate is {melt_rate_myr} m/yr over 30% of Greenland's $1.69\\times10^6 \\text{ km}^2$ area, we add {vol_melt_m3_yr:.2e} $\\text{m}^3$ of water to the ocean each year.
-            * Distributed across the World Ocean's $3.6\\times10^8 \\text{ km}^2$, this contributes **{slr_cm_decade:.3f} cm per decade** to global sea level rise! Water swells when it warms, and melting land ice adds literal new water to the tub.
+            * If the surface melt rate is {melt_rate_myr} m/yr over 30% of Greenland's $1.69\\times10^6 \\text{{ km}}^2$ area, we add {vol_melt_m3_yr:.2e} $\\text{{m}}^3$ of water to the ocean each year.
+            * Distributed across the World Ocean's $3.6\\times10^8 \\text{{ km}}^2$, this contributes **{slr_cm_decade:.3f} cm per decade** to global sea level rise! Water swells when it warms, and melting land ice adds literal new water to the tub.
             """)
             
         render_next_button(chapter, page)
