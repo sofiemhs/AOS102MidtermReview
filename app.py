@@ -190,24 +190,25 @@ CURRICULUM = {
     },
     "6. Global Warming Scenarios": {
         "pages": [
-            "6.1 Concept: Radiative Forcing & Aerosols", 
-            "6.2 Concept: The Commitment Concept", 
-            "6.3 Concept: Spatial Patterns", 
-            "6.4 Concept: Sea Level Rise",
-            "6.5 Model: Sea Level Dynamics",
-            "6.6 Knowledge Check"
+            "6.1 Concept: Forcings, Aerosols, & Predictability", 
+            "6.2 Concept: Emissions Scenarios (SRES, RCPs, SSPs)", 
+            "6.3 Concept: Emissions vs. Concentrations & The Gap", 
+            "6.4 Concept: Global-Average Response & Ensembles",
+            "6.5 Concept: Commitment & Long-Term Sea Level Rise",
+            "6.6 Model: Constant Composition Commitment",
+            "6.7 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "What is Radiative Forcing (Q)?", "opts": ["The net change in Earth's energy balance.", "The force of gravity on the atmosphere.", "The speed of solar wind."], "ans": "The net change in Earth's energy balance."},
-            {"q": "What effect do Sulfate Aerosols generally have on climate?", "opts": ["They warm the planet.", "They reflect sunlight, cooling the planet.", "They destroy the ozone layer."], "ans": "They reflect sunlight, cooling the planet."},
-            {"q": "Unlike CO2, how long do aerosols stay in the atmosphere?", "opts": ["Centuries", "Decades", "Days/Weeks"], "ans": "Days/Weeks"},
-            {"q": "What is the 'Constant Composition Commitment'?", "opts": ["If we stop emissions, temperatures instantly drop.", "Even if emissions stop, warming continues for decades as the ocean reaches equilibrium.", "We are committed to burning coal."], "ans": "Even if emissions stop, warming continues for decades as the ocean reaches equilibrium."},
-            {"q": "Why does the Arctic warm faster than the tropics?", "opts": ["Because it is closer to the sun.", "Because of Polar Amplification and the Ice-Albedo feedback.", "Because there is less wind."], "ans": "Because of Polar Amplification and the Ice-Albedo feedback."},
-            {"q": "Why does land warm faster than the ocean?", "opts": ["The ocean has a much higher heat capacity.", "Land is darker.", "The ocean reflects more light."], "ans": "The ocean has a much higher heat capacity."},
-            {"q": "What are the two main causes of Sea Level Rise?", "opts": ["Thermal Expansion and Land Ice Melt.", "Sea Ice Melt and River Runoff.", "Evaporation and Precipitation."], "ans": "Thermal Expansion and Land Ice Melt."},
-            {"q": "Does melting Sea Ice significantly raise sea levels?", "opts": ["Yes, massively.", "No, it is like a melting ice cube in a glass of water.", "Only in the summer."], "ans": "No, it is like a melting ice cube in a glass of water."},
-            {"q": "What is Thermal Expansion?", "opts": ["Ice expanding as it freezes.", "Water physically expanding as its temperature increases.", "The atmosphere pushing down on the ocean."], "ans": "Water physically expanding as its temperature increases."},
-            {"q": "Which of these adds NEW water to the ocean basin?", "opts": ["Melting sea ice.", "Thermal expansion.", "Melting land ice sheets (Greenland/Antarctica)."], "ans": "Melting land ice sheets (Greenland/Antarctica)."}
+            {"q": "What is the primary global effect of sulfate aerosols on the climate system?", "opts": ["Net cooling tendency by reflection of sunlight.", "Net warming by trapping infrared radiation.", "Destruction of the ozone layer."], "ans": "Net cooling tendency by reflection of sunlight."},
+            {"q": "How does the residence time of aerosols compare to long-lived greenhouse gases?", "opts": ["They have very short residence times compared to long-lived GHGs.", "They stay in the atmosphere for centuries.", "They are permanently trapped in the stratosphere."], "ans": "They have very short residence times compared to long-lived GHGs."},
+            {"q": "In CMIP5, what does the '8.5' in the RCP 8.5 scenario represent?", "opts": ["8.5 degrees of warming by 2100.", "8.5 W/m2 radiative forcing in 2100.", "8.5 meters of sea level rise."], "ans": "8.5 W/m2 radiative forcing in 2100."},
+            {"q": "In the CMIP6 framework, what does the SSP5-8.5 scenario represent?", "opts": ["A sustainable, green-technology pathway.", "Fossil-fueled development with global population peaking and declining in the 21st century.", "Resurgent nationalism with low economic growth."], "ans": "Fossil-fueled development with global population peaking and declining in the 21st century."},
+            {"q": "If human greenhouse gas emissions remain perfectly constant over time, what happens to the atmospheric concentration?", "opts": ["It stabilizes immediately.", "It undergoes an ongoing, continuous increase.", "It slowly decreases."], "ans": "It undergoes an ongoing, continuous increase."},
+            {"q": "According to the professor's notes, what is required if emissions are not brought down quickly enough and CO2 overshoots the stabilization target?", "opts": ["Negative emissions (actively removing CO2).", "A massive increase in sulfate aerosols.", "Nothing, the ocean will instantly absorb the excess."], "ans": "Negative emissions (actively removing CO2)."},
+            {"q": "What does the 'emissions gap' refer to in the UNEP report?", "opts": ["The difference between North American and European emissions.", "The difference between Nationally Determined Contributions (NDCs) and the reductions needed to stay under 2°C.", "The gap in satellite data tracking carbon dioxide."], "ans": "The difference between Nationally Determined Contributions (NDCs) and the reductions needed to stay under 2°C."},
+            {"q": "When dozens of climate models are run with the exact same emissions scenario, why is there an 'envelope' or spread of different temperature projections?", "opts": ["Because of differences in simulated climate feedbacks and internal natural variability.", "Because the supercomputers run at different speeds.", "Because the scenarios are secretly different for each group."], "ans": "Because of differences in simulated climate feedbacks and internal natural variability."},
+            {"q": "What is the 'Constant composition commitment'?", "opts": ["The commitment of nations to keep their emissions constant.", "The continued global warming that occurs even if radiative forcing is kept constant at current levels.", "The commitment to maintain constant cloud cover."], "ans": "The continued global warming that occurs even if radiative forcing is kept constant at current levels."},
+            {"q": "Why do sea level rise projections show an ongoing increase even long after CO2 concentrations are stabilized?", "opts": ["Because rain falls more frequently in a warmer world.", "Because the deep ocean and ice sheets have very long response times to warming.", "Because landmasses are physically sinking."], "ans": "Because the deep ocean and ice sheets have very long response times to warming."}
         ]
     },
     "Final Exam: Terminal Clearance": {
@@ -947,58 +948,79 @@ df = pd.DataFrame({'Equilibrium Warming (K)': delta_T}, index=scenarios)
 
 # --- CHAPTER 6 CONTENT ---
 elif chapter == "6. Global Warming Scenarios":
-    if page == "6.1 Concept: Radiative Forcing & Aerosols":
+    if page == "6.1 Concept: Forcings, Aerosols, & Predictability":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 6.1: The Net Energy Balance</h3>
-        <p><b>Radiative Forcing ($Q$):</b> This is the net change in energy entering versus leaving the Earth system, measured in Watts per square meter. $CO_2$ is the dominant positive (warming) forcing.</p>
-        <p><b>Sulfate Aerosols:</b> Burning coal and volcanic eruptions release sulfur particles. These act as a strong negative forcing. They physically reflect sunlight and act as seeds to create highly reflective low clouds. However, unlike $CO_2$ which stays in the atmosphere for centuries, aerosols literally rain out of the sky in a matter of days or weeks.</p>
+        <h3>Log Entry 6.1: Signal and Noise</h3>
+        <p>Climate model predictions for global warming respond to an applied forcing (like greenhouse gases) dictated by specific emissions scenarios. If the forcing occurs, the response <i>will</i> occur within a predictable range of uncertainty (often termed a <b>projection</b>).</p>
+        <p>Natural variability, however, remains unpredictable at long lead times. It acts as "noise" over the forced "signal."</p>
+        <p><b>Aerosols:</b> Unlike long-lived GHGs, particulate aerosols (like sulfates) have very <b>short residence times</b> (days to weeks). Globally, sulfate aerosols create a strong <b>net cooling tendency</b> by directly reflecting sunlight. This aerosol cooling significantly offsets a portion of current GHG warming, but long-lived greenhouse gases will heavily dominate future scenarios.</p>
+        <br><br><br>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "6.2 Concept: The Commitment Concept":
+    elif page == "6.2 Concept: Emissions Scenarios (SRES, RCPs, SSPs)":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 6.2: Unstoppable Momentum</h3>
-        <p>Climate policy often discusses the <b>Constant Composition Commitment</b>.</p>
-        <p>If humanity magically stopped emitting all greenhouse gases today, locking the atmosphere's composition exactly where it is right now, the planet's temperature would <i>still continue to rise for decades</i>.</p>
-        <p>Why? Because the Deep Ocean is a massive thermal sink. It takes decades for that deep, cold water to fully absorb the heat from the atmosphere. We are "committed" to future warming simply waiting for the ocean to reach equilibrium with the heat we have already trapped.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        render_next_button(chapter, page)
-
-    elif page == "6.3 Concept: Spatial Patterns":
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Log Entry 6.3: Where the Heat Goes</h3>
-        <p>Global warming is not uniform across the globe.</p>
+        <h3>Log Entry 6.2: The Path Forward</h3>
+        <p>Because future forcing depends entirely on human societal choices, scientists use coordinated scenarios. These have evolved over IPCC reports:</p>
         <ul>
-            <li><b>Polar Amplification:</b> The Arctic is warming at nearly four times the rate of the tropics. As reflective white ice melts, it reveals dark ocean water. The dark water absorbs massive amounts of heat, melting more ice in a vicious cycle.</li>
-            <li><b>Land vs. Ocean:</b> Landmasses warm much faster than oceans. The ocean has an incredibly high heat capacity—meaning it can absorb massive amounts of thermal energy before its temperature actually registers an increase.</li>
+            <li><b>CMIP3 / SRES (2007):</b> Grouped by economic and population development (e.g., A1FI = Fossil Intensive, A1T = Green Tech, B1 = Sustainable).</li>
+            <li><b>CMIP5 / RCPs (2013):</b> Representative Concentration Pathways, named simply by their 2100 radiative forcing. <b>RCP 8.5</b> implies an extreme $8.5 W/m^2$ forcing by 2100. <b>RCP 2.6</b> represents aggressive mitigation.</li>
+            <li><b>CMIP6 / SSPs (Current):</b> Shared Socioeconomic Pathways. These merge social choices with forcing. <b>SSP5-8.5</b> represents fossil-fueled development and high population. <b>SSP1-2.6</b> represents a sustainable shift. Note that some sustainable or "overshoot" scenarios (like SSP1-1.9 or SSP5-3.4-OS) actually require <i>net negative emissions</i> to function.</li>
         </ul>
+        <br><br><br>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "6.4 Concept: Sea Level Rise":
+    elif page == "6.3 Concept: Emissions vs. Concentrations & The Gap":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 6.4: The Expanding Ocean</h3>
-        <p>Sea levels are rising due to two distinct physical mechanisms:</p>
-        <ol>
-            <li><b>Land Ice Melt:</b> Massive glaciers and ice sheets situated on land (Greenland and Antarctica) melt and dump physically new water into the ocean basin. (Note: Melting sea ice, like at the North Pole, does not raise sea levels, just as a melting ice cube doesn't overflow a glass of water).</li>
-            <li><b>Thermal Expansion:</b> The fluid mechanics rule from Chapter 3. As the ocean absorbs heat, the water molecules physically vibrate more and spread further apart, expanding the total volume of the ocean.</li>
-        </ol>
+        <h3>Log Entry 6.3: Filling the Atmosphere</h3>
+        <p>It is vital to understand the difference between emitting carbon and the total concentration sitting in the atmosphere. For a long-lived gas like CO2:</p>
+        <ul>
+            <li><b>Increasing Emissions:</b> Concentration increases at an ever-faster rate.</li>
+            <li><b>Constant Emissions:</b> Concentration undergoes an ongoing, continuous increase.</li>
+            <li><b>Decreasing Emissions:</b> Concentration still increases, just less quickly.</li>
+            <li><b>Very Low Emissions:</b> Only then does concentration stabilization occur.</li>
+        </ul>
+        <p>If emissions are not brought down quickly enough, CO2 will overshoot the stabilization target. Fixing an overshoot requires <b>negative emissions</b> (actively removing CO2 from the sky).</p>
+        <p><b>The Emissions Gap:</b> The UNEP Emissions Gap Report explicitly calculates the massive difference between current Nationally Determined Contributions (NDCs) and the actual deep reductions required to keep global average warming under 2°C.</p>
+        <br><br><br>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "6.4 Concept: Global-Average Response & Ensembles":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 6.4: The Model Envelope</h3>
+        <p>Dozens of global research groups (like NCAR, GFDL, GISS, MPI) run their complex climate models using the exact same forcing scenarios.</p>
+        <p>Even with identical radiative forcing, global average warming differs slightly from model to model because each group simulates climate feedbacks (like clouds) differently. When plotted together, these models create an "envelope" or shaded spread of projections. The spread highlights the uncertainty caused by both differing model physics and natural interannual weather noise.</p>
+        <br><br><br>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
         
-    elif page == "6.5 Model: Sea Level Dynamics":
+    elif page == "6.5 Concept: Commitment & Long-Term Sea Level Rise":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Modeling Bay: Components of Sea Level Rise</h3>
-        <p>Let's model the dual impact of Thermal Expansion and Land Ice melt on total sea level rise over the next century.</p>
+        <h3>Log Entry 6.5: Unstoppable Momentum</h3>
+        <p>What happens if we magically stop emissions right now?</p>
+        <p><b>Constant Composition Commitment:</b> Simulations that instantly freeze radiative forcing at year 2000 (or 2100) levels prove that global warming is committed to continue. Temperatures will still slowly rise for decades.</p>
+        <p>This commitment is most visible in <b>Sea Level Rise</b>. The deep ocean has a massive heat capacity, and ice sheets take centuries to melt. Because of thermal expansion and land-ice melt, sea levels will experience massive long-term increases, continuing an ongoing rise long after CO2 concentrations are completely stabilized.</p>
+        <br><br><br>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "6.6 Model: Constant Composition Commitment":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Modeling Bay: The Physics of Lag</h3>
+        <p>Let's simulate the "Constant Composition Commitment." We will steadily increase radiative forcing until the year 2050, then instantly freeze it. Watch how temperature and sea level rise respond.</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -1006,50 +1028,64 @@ elif chapter == "6. Global Warming Scenarios":
 import pandas as pd
 import numpy as np
 
-# Simulate years 2020 to 2120
-years = np.arange(2020, 2121)
+# Simulate years 2000 to 2200
+years = np.arange(2000, 2201)
 
-# Thermal expansion: steady, linear increase (mm)
-thermal = 1.2 * (years - 2020)
+# Scenario: Radiative forcing steadily increases, then instantly stabilizes in 2050
+forcing = np.where(years <= 2050, 2.0 + 0.05 * (years - 2000), 2.0 + 0.05 * 50)
 
-# Land Ice melt: accelerates non-linearly due to feedback loops (mm)
-ice_melt = 0.5 * ((years - 2020) ** 1.3)
+# Temperature lags forcing heavily due to ocean heat capacity (simulated here with an e-folding lag)
+temp = np.zeros(len(years))
+temp[0] = 0.5
+for i in range(1, len(years)):
+    equilibrium_T = forcing[i] * 0.75  # 0.75 K per W/m2 sensitivity
+    tau = 30.0  # 30-year response time
+    temp[i] = temp[i-1] + (equilibrium_T - temp[i-1]) / tau
 
-# Total Sea Level Rise
-total_slr = thermal + ice_melt
+# Sea level rise from thermal expansion has a much longer, multi-century lag
+slr = np.zeros(len(years))
+for i in range(1, len(years)):
+    slr[i] = slr[i-1] + temp[i] * 1.5
 
 df = pd.DataFrame({
-    'Thermal Expansion': thermal,
-    'Land Ice Melt': ice_melt,
-    'Total Sea Level Rise': total_slr
+    'Radiative Forcing (W/m2)': forcing,
+    'Surface Temp Anomaly (K)': temp,
+    'Thermal Expansion SLR (mm)': slr
 }, index=years)
         ''', language='python')
         
         if st.button("Run Code", type="primary"):
             st.markdown("### Output Analysis:")
-            years = np.arange(2020, 2121)
-            thermal = 1.2 * (years - 2020)
-            ice_melt = 0.5 * ((years - 2020) ** 1.3)
-            total_slr = thermal + ice_melt
+            years = np.arange(2000, 2201)
+            forcing = np.where(years <= 2050, 2.0 + 0.05 * (years - 2000), 2.0 + 0.05 * 50)
             
-            df = pd.DataFrame({
-                'Thermal Expansion (Steady)': thermal,
-                'Land Ice Melt (Accelerating)': ice_melt,
-                'Total Sea Level Rise': total_slr
-            }, index=years)
+            temp = np.zeros(len(years))
+            temp[0] = 0.5
+            for i in range(1, len(years)):
+                equilibrium_T = forcing[i] * 0.75
+                tau = 30.0
+                temp[i] = temp[i-1] + (equilibrium_T - temp[i-1]) / tau
+                
+            slr = np.zeros(len(years))
+            for i in range(1, len(years)):
+                slr[i] = slr[i-1] + temp[i] * 1.5
+                
+            df_temp = pd.DataFrame({'Radiative Forcing (W/m2)': forcing, 'Surface Temp Anomaly (K)': temp}, index=years)
+            df_slr = pd.DataFrame({'Thermal Expansion SLR (mm)': slr}, index=years)
             
-            st.line_chart(df)
+            st.line_chart(df_temp)
+            st.line_chart(df_slr)
             
             st.info("""
             **Graph Analysis:**
-            * **Thermal Expansion:** Shows a steady, linear rise. As the ocean slowly absorbs heat, it steadily expands.
-            * **Land Ice Melt:** Notice the curve. Ice melt accelerates as time goes on because of powerful feedback loops (like Polar Amplification). 
-            * **Total:** The combination of both factors leads to an aggressively accelerating sea level rise curve toward the end of the century.
+            Notice the forcing (the blue line) flatlines perfectly at the year 2050. We stopped adding GHGs. 
+            However, the surface temperature (red line) continues to aggressively climb for decades afterward, taking nearly 100 years to flatten out as the ocean slowly catches up to equilibrium. 
+            More terrifying is the second graph: Sea Level Rise (thermal expansion) never stops rising in this 200-year window, driven by the immense thermal inertia of the deep ocean continuing to absorb heat.
             """)
             
         render_next_button(chapter, page)
 
-    elif page == "6.6 Knowledge Check":
+    elif page == "6.7 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- FINAL EXAM ---
