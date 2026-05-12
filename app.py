@@ -282,6 +282,13 @@ df['Smoothed Trend'] = df['Raw Temp'].rolling(window=10, center=True).mean() # T
             
             st.line_chart(df)
             
+            st.info("""
+            **Graph Analysis:**
+            
+            * **Raw Temp (Noise):** Notice how violently this line spikes up and down from year to year. This represents internal climate variability (like El Niño or La Niña). If you only looked at a short 3-to-4 year chunk of this line, you might falsely conclude the planet was rapidly cooling or rapidly warming. This chaotic short-term data represents "weather."
+            * **Smoothed Trend (Signal):** By calculating a 10-year rolling average, we strip away the short-term, year-to-year chaos. What remains is a much smoother, steady upward slope. This reveals the underlying anthropogenic forcing (human-caused warming trend) of exactly 0.02 degrees per year that was completely hidden beneath the noise. This long-term statistical average represents "climate."
+            """)
+            
         render_next_button(chapter, page)
 
     elif page == "1.3 Knowledge Check":
