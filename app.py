@@ -1,10 +1,3 @@
-This is exactly the kind of structural upgrade this framework was built for. I have vastly expanded the `CURRICULUM` dictionary to house all six chapters based on your study guide, translating every bullet point into dedicated subpages.
-
-I've also generated 10 specific quiz questions per chapter to ensure the "randomly select 5" logic works flawlessly with a deep pool. Finally, I kept all the CSS, structural logic, and interactive graph rules *exactly* identical to the last version, while adding new Python interactive models for concepts like Stefan-Boltzmann and Sea Level Rise.
-
-Here is the massive, fully updated `app.py`:
-
-```python
 import streamlit as st
 import pandas as pd
 import numpy as np
