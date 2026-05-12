@@ -25,6 +25,28 @@ st.markdown("""
 
     .stApp { background-color: #006884; }
     
+    /* --- SIDEBAR OVERRIDES (WHITE TEXT) --- */
+    [data-testid="stSidebar"] {
+        background-color: #004d61; /* Darker teal to ensure white text is visible */
+    }
+    
+    [data-testid="stSidebar"], [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label {
+        color: #ffffff !important; 
+    }
+    
+    /* Modify sidebar buttons specifically to keep white text readable */
+    [data-testid="stSidebar"] .stButton>button {
+        background-color: #000000;
+        color: #ffffff !important;
+        border: 2px solid #ffffff;
+    }
+    
+    [data-testid="stSidebar"] .stButton>button:hover {
+        background-color: #333333;
+        color: #ffffff !important;
+    }
+    /* -------------------------------------- */
+
     .stButton>button, .stFormSubmitButton>button {
         width: 100%; border-radius: 4px; height: 3em; background-color: #ffffff; 
         color: #000000 !important; font-weight: bold; border: 2px solid #000000;
@@ -49,7 +71,6 @@ st.markdown("""
 # ==========================================
 # CURRICULUM DATA STRUCTURE
 # ==========================================
-# To add content, simply expand this dictionary.
 
 CURRICULUM = {
     "1. The Signal and the Noise": {
@@ -84,7 +105,7 @@ CURRICULUM = {
     },
     "Final Exam: Terminal Clearance": {
         "pages": ["Final Knowledge Check"],
-        "quiz_pool": [] # Will be dynamically populated from all chapters
+        "quiz_pool": []
     }
 }
 
@@ -130,7 +151,6 @@ with st.sidebar:
         if is_unlocked:
             with st.expander(f"📂 {chapter}", expanded=(chapter == st.session_state.current_chapter)):
                 for page in CURRICULUM[chapter]["pages"]:
-                    # Create a button for each subpage
                     if st.button(page, key=f"nav_{chapter}_{page}", use_container_width=True, 
                                  type="primary" if st.session_state.current_page == page else "secondary"):
                         change_page(chapter, page)
@@ -147,7 +167,6 @@ with st.sidebar:
 # HELPER FUNCTIONS
 # ==========================================
 def render_next_button(current_chapter, current_page):
-    """Renders a button to go to the next chronological page in the chapter."""
     pages = CURRICULUM[current_chapter]["pages"]
     current_idx = pages.index(current_page)
     
@@ -158,13 +177,10 @@ def render_next_button(current_chapter, current_page):
             st.rerun()
 
 def run_quiz(chapter_name, pool, required_score=5):
-    """Handles randomized quiz logic and unlocks the next chapter upon success."""
     quiz_key = f"quiz_state_{chapter_name}"
     
-    # 1. Randomly select half the questions ONLY ONCE per session
     if quiz_key not in st.session_state:
         num_questions = min(required_score, len(pool) // 2)
-        # Ensure we always select exactly the required amount to pass
         st.session_state[quiz_key] = random.sample(pool, required_score)
     
     active_questions = st.session_state[quiz_key]
@@ -187,7 +203,6 @@ def run_quiz(chapter_name, pool, required_score=5):
                 st.success("ACCESS GRANTED. Security bypassed.")
                 st.balloons()
                 
-                # Unlock logic
                 current_chap_idx = CHAPTER_LIST.index(chapter_name)
                 if current_chap_idx < len(CHAPTER_LIST) - 1:
                     next_chapter = CHAPTER_LIST[current_chap_idx + 1]
@@ -201,8 +216,6 @@ def run_quiz(chapter_name, pool, required_score=5):
                     st.success("🎉 TERMINAL FULLY UNLOCKED. COURSE COMPLETE.")
             else:
                 st.error(f"ACCESS DENIED. Score: {score}/{required_score}. Review the logs and try again.")
-                # Optional: Delete session state here if you want them to get new questions on failure
-                # del st.session_state[quiz_key]
 
 # ==========================================
 # PAGE CONTENT RENDERING
@@ -238,33 +251,37 @@ if chapter == "1. The Signal and the Noise":
         </div>
         """, unsafe_allow_html=True)
         
-        # Display the code
+        # Display the code with heavily commented line-by-line explanations
         st.code('''
-import pandas as pd
-import numpy as np
+import pandas as pd # Import the pandas library to store and manipulate our data in a table structure
+import numpy as np # Import the numpy library to handle complex mathematical arrays and random number generation
 
 # Simulate 50 years of noisy temperature data
-years = np.arange(1970, 2020)
-noise = np.random.normal(0, 0.5, len(years))
-signal = 0.02 * (years - 1970) # Underlying warming trend
-raw_temp = signal + noise
+years = np.arange(1970, 2020) # Create an array of sequential years starting at 1970 and ending at 2019
+noise = np.random.normal(0, 0.5, len(years)) # Generate random temperature variations (mean 0, standard deviation 0.5) for every single year
+signal = 0.02 * (years - 1970) # Calculate the true warming trend (the signal), increasing by exactly 0.02 degrees each year
+raw_temp = signal + noise # Add the random noise and the true signal together to create realistic chaotic weather data
 
-df = pd.DataFrame({'Year': years, 'Raw Temp': raw_temp})
+# Store the simulated data in a structured DataFrame table
+df = pd.DataFrame({'Year': years, 'Raw Temp': raw_temp}) 
 
 # Apply a 10-year rolling average to smooth the noise
-df['Smoothed Trend'] = df['Raw Temp'].rolling(window=10, center=True).mean()
+df['Smoothed Trend'] = df['Raw Temp'].rolling(window=10, center=True).mean() # Take a 10-year sliding window, calculate the average, and center it to reveal the hidden climate signal
         ''', language='python')
         
-        # Actually run the simulated code and show the graph
-        years = np.arange(1970, 2020)
-        np.random.seed(42) # For consistent graphs
-        noise = np.random.normal(0, 0.4, len(years))
-        signal = 0.02 * (years - 1970) 
-        raw_temp = signal + noise
-        df = pd.DataFrame({'Raw Temp (Noise)': raw_temp}, index=years)
-        df['Smoothed Trend (Signal)'] = df['Raw Temp (Noise)'].rolling(window=10, center=True).mean()
-        
-        st.line_chart(df)
+        # Only run and display the graph when the user explicitly clicks the button
+        if st.button("Run Code", type="primary"):
+            st.markdown("### Output Analysis:")
+            years = np.arange(1970, 2020)
+            np.random.seed(42) # Set a fixed random seed so the graph output looks identical every time it runs
+            noise = np.random.normal(0, 0.4, len(years))
+            signal = 0.02 * (years - 1970) 
+            raw_temp = signal + noise
+            df = pd.DataFrame({'Raw Temp (Noise)': raw_temp}, index=years)
+            df['Smoothed Trend (Signal)'] = df['Raw Temp (Noise)'].rolling(window=10, center=True).mean()
+            
+            st.line_chart(df)
+            
         render_next_button(chapter, page)
 
     elif page == "1.3 Knowledge Check":
@@ -299,5 +316,4 @@ elif chapter == "2. The Energy Engine":
 elif chapter == "Final Exam: Terminal Clearance":
     if page == "Final Knowledge Check":
         st.warning("WARNING: This is the final evaluation. Questions are pulled from all previous databanks.")
-        # Requires 10 questions to pass
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=10)
