@@ -144,41 +144,48 @@ CURRICULUM = {
     },
     "4. El Niño (ENSO)": {
         "pages": [
-            "4.1 Concept: Normal State", 
-            "4.2 Concept: El Niño Warm Phase", 
+            "4.1 Concept: Normal State & Climatology", 
+            "4.2 Concept: El Niño & La Niña Extremes", 
             "4.3 Concept: Feedbacks & Oscillators", 
-            "4.4 Knowledge Check"
+            "4.4 Concept: ENSO Prediction Limits & Ensembles",
+            "4.5 Concept: Teleconnections & Remote Impacts",
+            "4.6 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "During the Normal State (Walker Circulation), which way do trade winds blow?", "opts": ["East to West", "West to East", "North to South"], "ans": "East to West"},
-            {"q": "Where does the 'Warm Pool' normally sit?", "opts": ["Off the coast of South America", "In the Western Pacific (Indonesia)", "In the Atlantic"], "ans": "In the Western Pacific (Indonesia)"},
-            {"q": "What happens to the trade winds during El Niño?", "opts": ["They get much stronger.", "They collapse or reverse.", "They blow vertically."], "ans": "They collapse or reverse."},
-            {"q": "What happens to the thermocline during El Niño?", "opts": ["It becomes extremely steep.", "It flattens out across the Pacific.", "It disappears completely."], "ans": "It flattens out across the Pacific."},
-            {"q": "What is the Bjerknes Feedback?", "opts": ["A self-reinforcing loop where weak winds lead to warmer East Pacific waters.", "A negative feedback that stops El Niño.", "The process of ice melting."], "ans": "A self-reinforcing loop where weak winds lead to warmer East Pacific waters."},
-            {"q": "How does the 'Delayed Oscillator' end El Niño?", "opts": ["Rossby waves hit the West coast, reflect as Kelvin waves, and bring the thermocline back up.", "The sun cools down temporarily.", "Heavy rains cool the ocean surface directly."], "ans": "Rossby waves hit the West coast, reflect as Kelvin waves, and bring the thermocline back up."},
-            {"q": "Where does deep, cold water upwell during normal conditions?", "opts": ["In the West Pacific.", "In the East Pacific (South America).", "In the Indian Ocean."], "ans": "In the East Pacific (South America)."},
-            {"q": "El Niño is known as the:", "opts": ["Cold Phase", "Neutral Phase", "Warm Phase"], "ans": "Warm Phase"},
-            {"q": "What is the thermocline?", "opts": ["The boundary between warm surface water and cold deep water.", "The boundary between the troposphere and stratosphere.", "A type of ocean current."], "ans": "The boundary between warm surface water and cold deep water."},
-            {"q": "During El Niño, the 'Warm Pool' sloshes toward:", "opts": ["The West", "The East", "The North Pole"], "ans": "The East"}
+            {"q": "Under normal Pacific conditions, how does the thermocline depth in the west compare to the east?", "opts": ["It is completely flat.", "It is about 100m shallower in the west.", "It is about 100m deeper in the west."], "ans": "It is about 100m deeper in the west."},
+            {"q": "What physical mechanism balances the westward wind stress in the Pacific ocean under normal conditions?", "opts": ["The eastward pressure gradient force in the ocean.", "The gravitational pull of the moon.", "The Coriolis force exactly at the equator."], "ans": "The eastward pressure gradient force in the ocean."},
+            {"q": "How did Jakob Bjerknes describe the primary feedback of the Walker circulation?", "opts": ["Winds are completely independent of sea surface temperature.", "An increase in easterly winds increases upwelling and the east-west temperature contrast, which in turn causes the winds.", "Rainfall suppresses the trade winds."], "ans": "An increase in easterly winds increases upwelling and the east-west temperature contrast, which in turn causes the winds."},
+            {"q": "During an El Niño warm phase, what happens to the upwelling in the eastern Pacific?", "opts": ["Upwelling stops entirely.", "Upwelling continues, but brings up water that is less cold than normal.", "Upwelling reverses and pushes water down."], "ans": "Upwelling continues, but brings up water that is less cold than normal."},
+            {"q": "According to the Delayed Oscillator theory, what ultimately ends an El Niño event?", "opts": ["Subsurface anomalies evolving by slow ocean dynamics return to the eastern Pacific to pull the thermocline back up.", "The sun's solar cycle resets.", "A sudden increase in Atlantic hurricanes pulls heat away from the Pacific."], "ans": "Subsurface anomalies evolving by slow ocean dynamics return to the eastern Pacific to pull the thermocline back up."},
+            {"q": "What is the primary fundamental limit to accurately predicting ENSO beyond a few months?", "opts": ["Satellites routinely break down.", "Fundamental weather noise and chaos acting as a random forcing on the slow ocean-atmosphere interaction.", "The lack of any computer models."], "ans": "Fundamental weather noise and chaos acting as a random forcing on the slow ocean-atmosphere interaction."},
+            {"q": "Why do climate scientists use ensemble forecasting for ENSO?", "opts": ["To create prettier graphics.", "By starting models from different initial conditions, the ensemble spread provides an estimate of forecast uncertainty.", "To prove that weather noise does not exist."], "ans": "By starting models from different initial conditions, the ensemble spread provides an estimate of forecast uncertainty."},
+            {"q": "What is the Pacific-North America (PNA) teleconnection?", "opts": ["An anomalous planetary wave train associated with El Niño that impacts the Northern Hemisphere winter.", "A deep ocean current connecting California to Japan.", "A physical pipeline built to transport water."], "ans": "An anomalous planetary wave train associated with El Niño that impacts the Northern Hemisphere winter."},
+            {"q": "How does an El Niño impact winter precipitation in California?", "opts": ["It guarantees severe flooding every time.", "It enhances the probability of a rainier-than-average winter, though it is far from certain due to weather noise.", "It guarantees a severe drought."], "ans": "It enhances the probability of a rainier-than-average winter, though it is far from certain due to weather noise."},
+            {"q": "What is the typical impact of El Niño on Atlantic hurricanes between July and October?", "opts": ["It drastically increases the number of named storms.", "It has no statistical effect.", "It tends to reduce the number of named storms and hurricanes."], "ans": "It tends to reduce the number of named storms and hurricanes."}
         ]
     },
     "5. Greenhouse Effect & Feedbacks": {
         "pages": [
-            "5.1 Concept: Selective Absorption", 
-            "5.2 Concept: Detailed Feedbacks", 
-            "5.3 Knowledge Check"
+            "5.1 Concept: Global Energy Balance & 1-Layer Model", 
+            "5.2 Concept: Greenhouse Radiative Forcing", 
+            "5.3 Concept: The Climate Feedback Parameter", 
+            "5.4 Concept: Water Vapor & Ice Feedbacks",
+            "5.5 Concept: Cloud & Lapse Rate Feedbacks",
+            "5.6 Concept: Transient vs. Equilibrium Response",
+            "5.7 Model: 1-Layer Energy Balance",
+            "5.8 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "What is 'Selective Absorption' in the context of the atmosphere?", "opts": ["The atmosphere blocks all sunlight.", "The atmosphere is transparent to shortwave but opaque to longwave radiation.", "The atmosphere absorbs all radiation equally."], "ans": "The atmosphere is transparent to shortwave but opaque to longwave radiation."},
-            {"q": "Which type of radiation is emitted by the Sun?", "opts": ["Shortwave", "Longwave (Infrared)", "Microwave"], "ans": "Shortwave"},
-            {"q": "Which type of radiation is trapped by Greenhouse Gases?", "opts": ["Shortwave", "Longwave (Infrared)", "Gamma rays"], "ans": "Longwave (Infrared)"},
-            {"q": "The Water Vapor feedback is considered:", "opts": ["A negative feedback.", "A positive feedback.", "A neutral feedback."], "ans": "A positive feedback."},
-            {"q": "Why is the Water Vapor feedback positive?", "opts": ["Warming causes more evaporation, leading to more water vapor (a GHG), causing more warming.", "Water vapor cools the Earth.", "It creates clouds that always reflect light."], "ans": "Warming causes more evaporation, leading to more water vapor (a GHG), causing more warming."},
-            {"q": "What is the Lapse Rate feedback in the tropics?", "opts": ["Positive", "Negative", "Neutral"], "ans": "Negative"},
-            {"q": "Why is the Lapse Rate feedback negative?", "opts": ["The upper atmosphere warms faster, radiating heat away more efficiently to space.", "The surface cools down too fast.", "Ozone blocks the heat."], "ans": "The upper atmosphere warms faster, radiating heat away more efficiently to space."},
-            {"q": "Which feedback is considered 'The Wildcard'?", "opts": ["Water vapor", "Cloud feedback", "Ice-albedo"], "ans": "Cloud feedback"},
-            {"q": "What is the general effect of Low clouds?", "opts": ["They trap heat (Warming).", "They reflect sunlight (Cooling).", "They do nothing."], "ans": "They reflect sunlight (Cooling)."},
-            {"q": "What is the general effect of High clouds?", "opts": ["They reflect sunlight (Cooling).", "They trap heat (Warming).", "They freeze the upper atmosphere."], "ans": "They trap heat (Warming)."}
+            {"q": "In the global average energy balance, what is the approximate incoming solar radiation at the top of the atmosphere?", "opts": ["1367 W/m2", "342 W/m2", "168 W/m2"], "ans": "342 W/m2"},
+            {"q": "What defines 'Radiative Forcing' ($G$) in the professor's climate model?", "opts": ["The physical force of the wind on the ocean.", "The energy imbalance at the top of the atmosphere before temperature changes to restore balance.", "The amount of solar radiation reflected by clouds."], "ans": "The energy imbalance at the top of the atmosphere before temperature changes to restore balance."},
+            {"q": "In the one-layer atmosphere model, what is the 'normal' climatological absorptivity ($\epsilon_a$) of the atmosphere to surface IR?", "opts": ["0.31", "0.50", "0.90"], "ans": "0.90"},
+            {"q": "How do positive climate feedbacks mathematically affect the cumulative climate feedback parameter ($\alpha$)?", "opts": ["They increase $\alpha$.", "They have a negative mathematical contribution, decreasing total $\alpha$.", "They multiply $\alpha$ by zero."], "ans": "They have a negative mathematical contribution, decreasing total $\alpha$."},
+            {"q": "Roughly how much does water vapor increase per degree Kelvin of warming in the lower troposphere?", "opts": ["1%", "7%", "20%"], "ans": "7%"},
+            {"q": "What are the opposing radiative effects of high clouds versus low clouds?", "opts": ["High clouds cool by reflecting IR, low clouds warm by absorbing solar.", "High clouds warm by trapping IR (emitting from colder levels), low clouds cool by reflecting solar.", "Both exclusively cool the planet."], "ans": "High clouds warm by trapping IR (emitting from colder levels), low clouds cool by reflecting solar."},
+            {"q": "Why is the Lapse Rate feedback considered negative in the tropics?", "opts": ["Because it causes more snow to fall.", "Because the upper troposphere warms faster than the surface, emitting more IR to space.", "Because it creates low stratus clouds."], "ans": "Because the upper troposphere warms faster than the surface, emitting more IR to space."},
+            {"q": "What causes the 'transient' climate response to lag behind the 'equilibrium' climate response?", "opts": ["The time it takes to run the computer models.", "The massive heat capacity of the oceans and ice sheets.", "The slow melting of sea ice."], "ans": "The massive heat capacity of the oceans and ice sheets."},
+            {"q": "According to the notes, what tends to cancel out the inter-model variations of the lapse rate feedback?", "opts": ["The snow/ice feedback.", "The cloud top feedback.", "The water vapor feedback."], "ans": "The water vapor feedback."},
+            {"q": "If greenhouse gas concentrations are suddenly capped, what happens to the global temperature?", "opts": ["It immediately drops to pre-industrial levels.", "It instantly stabilizes.", "It continues to rise for decades due to the ocean's lag."], "ans": "It continues to rise for decades due to the ocean's lag."}
         ]
     },
     "6. Global Warming Scenarios": {
@@ -730,23 +737,26 @@ df.index.name = 'Altitude (km)'
 
 # --- CHAPTER 4 CONTENT ---
 elif chapter == "4. El Niño (ENSO)":
-    if page == "4.1 Concept: Normal State":
+    if page == "4.1 Concept: Normal State & Climatology":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 4.1: The Walker Circulation</h3>
-        <p>Before understanding El Niño, you must understand the Pacific's normal state.</p>
-        <p>Normally, strong Trade Winds blow from East to West across the equator. These winds act like a snowplow, physically pushing warm surface water and piling it up in the Western Pacific (near Indonesia). This massive pile of energy is called the <b>Warm Pool</b>.</p>
-        <p>Because the water is pushed West, cold, nutrient-rich deep water is forced to upwell in the East (off the coast of South America) to replace it.</p>
+        <h3>Log Entry 4.1: The Walker Circulation & Normalcy</h3>
+        <p>Before understanding El Niño, we must establish the Pacific's "Normal" conditions in three dimensions.</p>
+        <p><b>Atmosphere:</b> Strong Trade Winds blow across the Pacific from East to West. This pushes air to rise in a massive convergence zone over the warm sea surface temperatures (SSTs) in the West.</p>
+        <p><b>Ocean:</b> The trade winds act like a snowplow, physically pushing water westward. This causes the thermocline (the boundary between warm upper water and cold deep water) to be roughly <b>100 meters deeper in the west</b>. Consequently, sea level is about 40 cm higher in the west than in the east.</p>
+        <br><br><br>
+        <p>In the vertical average, the eastward pressure gradient force in the ocean perfectly balances the westward wind stress. Meanwhile, on the equator in the east, the wind stress and Coriolis force cause surface water to diverge, forcing shallow, cold, nutrient-rich water to upwell to the surface.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "4.2 Concept: El Niño Warm Phase":
+    elif page == "4.2 Concept: El Niño & La Niña Extremes":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 4.2: The Slosh</h3>
-        <p>During an El Niño event, those East-to-West Trade Winds mysteriously collapse or even reverse.</p>
-        <p>Without the wind holding it back, that massive "Warm Pool" piled up in Indonesia sloshes entirely back across the Pacific Ocean toward South America. The thermocline (the boundary separating warm surface water from cold deep water) flattens out, completely shutting down the cold water upwelling in the East.</p>
+        <h3>Log Entry 4.2: The Extreme Phases</h3>
+        <p><b>El Niño (Warm Phase):</b> The Trade Winds weaken, collapse, or reverse. The unbalanced eastward pressure gradient force in the ocean causes anomalous eastward currents. The deep thermocline from the west sloshes east, deepening the thermocline in the Eastern Pacific. Upwelling still occurs, but it brings up <i>less cold</i> water than normal, causing warmer SSTs and shifting rainfall eastward.</p>
+        <br><br><br>
+        <p><b>La Niña (Cold Phase):</b> The opposite extreme. Trade Winds strengthen beyond normal. The westward wind stress severely exceeds the eastward ocean pressure gradient, creating anomalous westward currents. The thermocline shallows dramatically in the east, and upwelling brings up water that is <i>colder</i> than normal. Rainfall concentrates heavily in the far western Pacific.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -755,46 +765,184 @@ elif chapter == "4. El Niño (ENSO)":
         st.markdown("""
         <div class="lesson-card">
         <h3>Log Entry 4.3: The Engines of ENSO</h3>
-        <p>El Niño is driven by complex feedback loops:</p>
-        <ul>
-            <li><b>Bjerknes Feedback (The Amplifier):</b> A positive, self-reinforcing loop. Weak winds cause the East Pacific to warm up. This reduces the temperature difference between the East and West. A lower temperature difference causes the winds to weaken <i>even more</i>, causing more warming.</li>
-            <li><b>Delayed Oscillator (The Kill Switch):</b> Why doesn't El Niño last forever? When the warm water sloshes East, it sends deep underwater Rossby waves West. These waves hit the coast of Asia, bounce off, transform into Kelvin waves, and travel back East. Months later, they arrive and violently pull the thermocline back up, bringing cold water to the surface and killing the El Niño.</li>
-        </ul>
+        <p><b>The Bjerknes Feedback (The Amplifier):</b> First hypothesized by Jakob Bjerknes in 1969, this is a positive, self-reinforcing loop. Weak winds lead to warmer East Pacific SSTs. This reduces the east-west temperature contrast, which is the very cause of the Walker circulation. A reduced temperature gradient causes the winds to weaken <i>even more</i>, driving further warming.</p>
+        <p><b>The Delayed Oscillator (The Kill Switch):</b> Why doesn't an ENSO phase last forever? The transition is governed by slow ocean dynamics. Subsurface anomalies in the western Pacific (especially off the equator) evolve slowly and create a delayed effect.</p>
+        <br><br><br>
+        <p>Deep thermocline anomalies extend eastward as <i>Kelvin waves</i>. Meanwhile, shallow thermocline anomalies extend westward as <i>Rossby waves</i>. When these Rossby waves hit the western boundary of the Pacific, they can no longer travel west. They reflect back eastward, eventually returning across the equator to the Eastern Pacific to violently pull the thermocline back up, ending the El Niño.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "4.4 Knowledge Check":
+    elif page == "4.4 Concept: ENSO Prediction Limits & Ensembles":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 4.4: Forecasting the Cycle</h3>
+        <p><b>Reliability:</b> 3 to 9-month lead-time predictions of ENSO indices (like Niño-3.4) are generally reliable, though skill inherently decreases with longer lead times. However, the exact spatial pattern of the SST anomaly is less reliable than the general index.</p>
+        <p><b>Limits to Predictability:</b> Forecasts lose skill for two main reasons:</p>
+        <ol>
+            <li><i>Imperfections in the forecast system:</i> Model errors and a scarcity of input data (which can be improved with better technology).</li>
+            <li><i>Fundamental limits (Chaos):</i> "Weather noise" acts like a random forcing on the slow ocean-atmosphere interaction. Random transient weather events (like a localized storm) can cause equatorial easterlies to temporarily differ from the expected Bjerknes feedback, causing the cycle to depart from its predicted evolution.</li>
+        </ol>
+        <br><br><br>
+        <p><b>Ensemble Forecasting:</b> To communicate uncertainty, scientists run coupled models starting from slightly different initial ocean conditions. This "ensemble spread" provides an estimate of uncertainty, while the ensemble mean gives the best overall estimate.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+        
+    elif page == "4.5 Concept: Teleconnections & Remote Impacts":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 4.5: Global Shockwaves</h3>
+        <p>ENSO heavily influences global atmospheric and climate anomalies through <b>teleconnections</b>—long-distance linkages. These impact regions shift depending on the seasonal climatology.</p>
+        <ul>
+            <li><b>Anomalous Planetary Wave Trains:</b> El Niño excites massive atmospheric waves. In the Northern Hemisphere winter (Dec-Feb), this manifests as the <b>Pacific-North America (PNA) teleconnection</b>. In the austral winter (Jun-Aug), it drives the Pacific-South America (PSA) teleconnection.</li>
+            <li><b>Jet Stream & Storm Tracks:</b> These planetary waves alter the path of the jet stream, directly shifting global storm tracks.</li>
+            <li><b>California Precipitation:</b> During an El Niño, the probability distribution of winter precipitation shifts. The probability of a rainier-than-average winter is substantially enhanced (especially during strong events), but it is <i>far from certain</i> due to the random internal variability of weather noise.</li>
+            <li><b>Atlantic Hurricanes:</b> The shifting atmospheric shears from El Niño tend to suppress tropical cyclone development, leading to fewer "named storms" and hurricanes in the Atlantic basin during the July-October season.</li>
+            <li><b>Other Phenomena:</b> Other climate patterns include the North Atlantic Oscillation (NAO) / Annular Modes (which shift storm tracks impacting European precipitation) and the Pacific Decadal Oscillation (PDO), which operates on much longer timescales than ENSO.</li>
+        </ul>
+        <br><br><br>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "4.6 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 5 CONTENT ---
 elif chapter == "5. Greenhouse Effect & Feedbacks":
-    if page == "5.1 Concept: Selective Absorption":
+    if page == "5.1 Concept: Global Energy Balance & 1-Layer Model":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 5.1: The Greenhouse Trap</h3>
-        <p>The core of the greenhouse effect relies on a physics concept called <b>Selective Absorption</b>.</p>
-        <p>The gases in our atmosphere are mostly transparent to high-energy, high-frequency Shortwave radiation coming from the sun. The sunlight passes right through to the surface.</p>
-        <p>However, when the Earth absorbs this light and warms up, it glows by emitting lower-energy Longwave (Infrared) radiation. Greenhouse gases (like $CO_2$, methane, and water vapor) are chemically opaque to this specific frequency. They absorb the infrared heat and re-radiate it back down to the surface, trapping the energy.</p>
+        <h3>Log Entry 5.1: The Net Radiation Math</h3>
+        <p>To understand feedbacks, we must establish the baseline 1-Layer Energy Balance model in terms of Watts per square meter ($W/m^2$).</p>
+        <br><br><br>
+        <ul>
+            <li><b>Incoming Solar:</b> The average solar radiation reaching the top of the atmosphere is roughly <b>342 $W/m^2$</b>.</li>
+            <li><b>Reflection:</b> About 107 $W/m^2$ is immediately reflected back to space by clouds and the surface (albedo).</li>
+            <li><b>Absorption:</b> The remaining solar radiation is absorbed: 67 $W/m^2$ by the atmosphere, and <b>168 $W/m^2$</b> absorbed directly by the surface.</li>
+        </ul>
+        <p>To maintain balance, the Earth must re-emit an equal amount of energy to space. In the 1-layer atmospheric model, we assume "normal" climatology where the atmosphere absorbs roughly <b>90%</b> ($\epsilon_a = 0.90$) of the infrared radiation (IR) emitted by the surface. The atmosphere then radiates IR both up to space and back down to the surface, creating a massive 34°C difference compared to an Earth with no atmosphere.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "5.2 Concept: Detailed Feedbacks":
+    elif page == "5.2 Concept: Greenhouse Radiative Forcing":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 5.2: The Amplifiers</h3>
-        <p>CO2 doesn't do all the warming on its own; it triggers secondary mechanisms called feedbacks.</p>
+        <h3>Log Entry 5.2: Forcing the System</h3>
+        <p>When humans add greenhouse gases to the atmosphere, the absorptivity ($\epsilon_a$) of the atmosphere increases. This traps more upgoing IR that would have otherwise escaped to space.</p>
+        <p><b>Radiative Forcing ($G$):</b> This is defined as the exact energy imbalance (in $W/m^2$) at the top of the atmosphere <i>before</i> the temperature changes to restore the energy balance. A larger $G$ represents a larger initial deficit in outgoing IR, meaning the surface and atmosphere will have to warm significantly to force enough radiation out to balance the books.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+        
+    elif page == "5.3 Concept: The Climate Feedback Parameter":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 5.3: The Physics of Alpha</h3>
+        <p>As the surface warms to fight the radiative forcing, it emits more IR. The increase in outgoing IR to space per unit increase in surface temperature is known as the <b>Climate Feedback Parameter ($\\alpha$)</b>.</p>
+        <p>In a simple model with no extra environmental changes, warming the surface safely balances the forcing ($\\alpha_T \\Delta T_s = G$). However, the climate system reacts: $\\alpha = \\alpha_T + \\alpha_{H_2O} + \\alpha_{ice} + \\alpha_{cloud}$.</p>
+        <p><i>Crucial mathematical note:</i> Positive, amplifying feedbacks (like water vapor) actually have a <b>negative mathematical contribution</b> to the total $\\alpha$. Because $\\Delta T_s = G / \\alpha$, a smaller cumulative $\\alpha$ results in a much larger final temperature change.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+        
+    elif page == "5.4 Concept: Water Vapor & Ice Feedbacks":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 5.4: The Leading Amplifiers</h3>
+        <p><b>The Water Vapor Feedback (Positive):</b> As temperature increases, the atmosphere can hold more water vapor. For temperatures typical of the lower troposphere, water vapor increases about <b>7% per °K</b> of warming. Because water vapor is a potent greenhouse gas, it traps more heat, driving more evaporation ($\\alpha_{H_2O} = -2.0$ to $-1.5$ $W/m^2K^{-1}$).</p>
+        <p><b>The Snow/Ice Feedback (Positive):</b> Decreases in snow cover and sea ice expose darker ocean and land surfaces. This decreases the global albedo, allowing the Earth to absorb more solar radiation, which amplifies the warming ($\\alpha_{ice} = -0.3$ to $-0.1$ $W/m^2K^{-1}$).</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "5.5 Concept: Cloud & Lapse Rate Feedbacks":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 5.5: The Complex Modifiers</h3>
+        <p><b>Cloud Feedbacks (The Wildcard):</b> Clouds have opposing effects making them highly uncertain.</p>
+        <br><br><br>
         <ul>
-            <li><b>Water Vapor Feedback (Positive/Amplifying):</b> The strongest feedback. As $CO_2$ warms the air, the hotter air causes more ocean evaporation. Water vapor is a potent greenhouse gas, so more water vapor traps more heat, causing even more evaporation.</li>
-            <li><b>Lapse Rate Feedback (Negative/Cooling):</b> In the tropics, physics dictates the high upper atmosphere will warm faster than the surface. Because the upper atmosphere has a clearer "view" of space, it becomes highly efficient at radiating heat away, acting as a brake on global warming.</li>
-            <li><b>Cloud Feedback (The Wildcard):</b> Clouds are highly complex. Low, thick clouds act as mirrors, reflecting sunlight and cooling the Earth. High, wispy clouds act like blankets, trapping heat. Whether clouds will net-warm or net-cool the planet long-term remains a major area of study.</li>
+            <li><i>Low Clouds:</i> Tend to reflect heavy amounts of solar radiation (Net Cooling tendency).</li>
+            <li><i>High Clouds:</i> Tend to transmit solar radiation but absorb upwelling IR. Because they are at a higher, colder altitude, they emit very weak IR to space, effectively trapping heat (Net Warming tendency).</li>
+            <li><i>Cloud Top Feedback:</i> With warming, cloud tops tend to reach higher, colder altitudes, increasing their warming tendency.</li>
+        </ul>
+        <p><b>Lapse Rate Feedback:</b></p>
+        <ul>
+            <li><i>Tropics (Negative Feedback):</i> The upper troposphere warms faster than the surface. This warmer upper level emits more IR to space, acting as a brake on global warming.</li>
+            <li><i>High Latitudes (Positive Feedback):</i> The surface warms faster than the upper troposphere.</li>
+            <li><i>Note:</i> Inter-model variations of the water vapor feedback tend to cancel out variations in the lapse rate feedback.</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "5.3 Knowledge Check":
+    elif page == "5.6 Concept: Transient vs. Equilibrium Response":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 5.6: The Delay in the System</h3>
+        <p>There are two distinct types of climate projections:</p>
+        <ul>
+            <li><b>Equilibrium Climate Projections:</b> Represent the final climate change that will be reached eventually once it comes into complete balance with the forcing.</li>
+            <li><b>Transient Climate Projections:</b> Project the climate changes in real-time as they go.</li>
+        </ul>
+        <br><br><br>
+        <p>Because the oceans (and ice sheets) possess a massive heat capacity, they absorb a huge portion of the energy imbalance. This causes the transient warming to <b>lag</b> behind the equilibrium response. If greenhouse gas concentrations are suddenly capped (stopped from increasing), the temperature will still continue to rise for decades simply waiting for the ocean's massive thermal inertia to catch up.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "5.7 Model: 1-Layer Energy Balance":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Modeling Bay: The Mathematics of Alpha</h3>
+        <p>Let's model the impact of positive feedbacks on total equilibrium warming. Using the equation $\\Delta T_s = G / \\alpha$, we apply a theoretical $4.3 W/m^2$ forcing (doubled CO2) and watch how adding positive feedbacks shrinks $\\alpha$ and amplifies the temperature.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.code('''
+import pandas as pd
+import numpy as np
+
+# Simulate different feedback scenarios
+# Equation: Delta T = G / alpha
+G_doubled_co2 = 4.3  # Radiative forcing (W/m^2)
+
+# Scenarios building up the feedbacks
+scenarios = ["1. Basic IR Only", "2. + Water Vapor", "3. + Snow/Ice", "4. + Clouds"]
+
+# Alpha values decrease as positive amplifying feedbacks are mathematically subtracted
+alphas = [4.0, 2.0, 1.8, 1.4] 
+
+# Calculate final equilibrium temperature change
+delta_T = [G_doubled_co2 / a for a in alphas]
+
+df = pd.DataFrame({'Equilibrium Warming (K)': delta_T}, index=scenarios)
+        ''', language='python')
+        
+        if st.button("Run Code", type="primary"):
+            st.markdown("### Output Analysis:")
+            G_doubled_co2 = 4.3
+            scenarios = ["1. Basic IR Only", "2. + Water Vapor", "3. + Snow/Ice", "4. + Clouds"]
+            alphas = [4.0, 2.0, 1.8, 1.4] 
+            delta_T = [G_doubled_co2 / a for a in alphas]
+            
+            df = pd.DataFrame({'Equilibrium Warming (K)': delta_T}, index=scenarios)
+            
+            st.bar_chart(df)
+            
+            st.info("""
+            **Graph Analysis:**
+            Notice how the equilibrium warming ($\\Delta T_s$) skyrockets as we add more positive feedbacks. 
+            The basic physics of CO2 trapping heat (Scenario 1) only yields about 1.1K of warming. 
+            But when we include the reality that a warmer atmosphere holds more water vapor (Scenario 2), melts reflective ice (Scenario 3), and shifts cloud tops (Scenario 4), the cumulative feedback parameter $\\alpha$ shrinks significantly, amplifying the final temperature change to over 3K.
+            """)
+            
+        render_next_button(chapter, page)
+
+    elif page == "5.8 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 6 CONTENT ---
