@@ -75,66 +75,71 @@ st.markdown("""
 CURRICULUM = {
     "1. Overview of Climate Variability": {
         "pages": [
-            "1.1 Concept: Pillars of Variability", 
-            "1.2 Concept: Trusting Projections", 
-            "1.3 Concept: Model Hierarchy", 
-            "1.4 Model: Smoothing Data",
-            "1.5 Knowledge Check"
+            "1.1 Concept: Weather, Climate, & Anomalies", 
+            "1.2 Concept: Drivers & Greenhouse Gases", 
+            "1.3 Concept: Model Hierarchy & Grid Boxes", 
+            "1.4 Concept: IPCC & Emissions Pathways",
+            "1.5 Concept: Paleoclimate & Ice Cores",
+            "1.6 Model: Smoothing Data",
+            "1.7 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "What type of variability is El Niño considered?", "opts": ["Natural External", "Anthropogenic", "Internal Variability"], "ans": "Internal Variability"},
-            {"q": "If a volcano erupts and cools the Earth, what kind of forcing is this?", "opts": ["Internal", "Natural External", "Anthropogenic"], "ans": "Natural External"},
-            {"q": "What defines 'climate' as opposed to 'weather'?", "opts": ["Weather is a boundary value problem, climate is chaotic.", "Climate is the statistical average of weather over long periods.", "There is no difference."], "ans": "Climate is the statistical average of weather over long periods."},
-            {"q": "What is Anthropogenic Forcing?", "opts": ["Human-caused changes like greenhouse gas emissions.", "Volcanic activity.", "Orbital wobbles."], "ans": "Human-caused changes like greenhouse gas emissions."},
-            {"q": "Why is weather prediction limited to a few weeks?", "opts": ["Because it is a boundary value problem.", "Because of chaos and small errors in initial data growing rapidly.", "Because satellites cannot see through clouds."], "ans": "Because of chaos and small errors in initial data growing rapidly."},
-            {"q": "Which model treats the Earth as a single point?", "opts": ["GCMs", "Energy Balance Models (EBMs)", "Intermediate Models"], "ans": "Energy Balance Models (EBMs)"},
-            {"q": "What do General Circulation Models (GCMs) do?", "opts": ["Divide the world into a 3D grid to simulate complex interactions.", "Only predict ENSO.", "Ignore the oceans entirely."], "ans": "Divide the world into a 3D grid to simulate complex interactions."},
-            {"q": "Is the Earth's orbit (Milankovitch cycles) considered an internal or external forcing?", "opts": ["Internal", "External", "Neither"], "ans": "External"},
-            {"q": "If you add more energy (CO2) to the system, why can we predict it will warm?", "opts": ["Because it is chaotic.", "Because climate is a boundary value problem striving for energy balance.", "Because weather models say so."], "ans": "Because climate is a boundary value problem striving for energy balance."},
-            {"q": "What does a 10-year moving average accomplish?", "opts": ["It predicts the weather next week.", "It smooths out high-frequency noise to reveal long-term signals.", "It cools the dataset down."], "ans": "It smooths out high-frequency noise to reveal long-term signals."}
+            {"q": "How does the professor define 'climate' compared to 'weather'?", "opts": ["Weather is a boundary value problem, climate is chaotic.", "Weather is a particular event, while climate is the probability of an event occurring.", "There is no difference."], "ans": "Weather is a particular event, while climate is the probability of an event occurring."},
+            {"q": "What is an 'anomaly' in climate science?", "opts": ["A malfunctioning weather satellite.", "A departure from normal climatological conditions for a specified time period.", "A sudden spike in CO2 emissions."], "ans": "A departure from normal climatological conditions for a specified time period."},
+            {"q": "Which of the following is an example of internal climate variability?", "opts": ["Changes in Earth's orbit.", "El Niño and the North Atlantic Oscillation.", "Volcanic eruptions."], "ans": "El Niño and the North Atlantic Oscillation."},
+            {"q": "According to the professor, why is Earth's future annual average surface temperature more predictable than internal variability?", "opts": ["Because it is completely chaotic.", "Because it is controlled by the energy balance of the Earth's climate system.", "Because satellites can perfectly map the grid boxes."], "ans": "Because it is controlled by the energy balance of the Earth's climate system."},
+            {"q": "What happens to the concentration of a long-lived greenhouse gas if human emissions remain perfectly constant?", "opts": ["The concentration will stabilize immediately.", "The concentration will undergo an ongoing increase.", "The concentration will drop to zero."], "ans": "The concentration will undergo an ongoing increase."},
+            {"q": "What is the purpose of the IPCC?", "opts": ["To conduct new independent climate experiments.", "To review and assess scientific and socio-economic information without conducting its own research.", "To enforce the Paris Agreement globally."], "ans": "To review and assess scientific and socio-economic information without conducting its own research."},
+            {"q": "How do General Circulation Models (GCMs) solve physical equations?", "opts": ["By relying completely on historical proxy data.", "By dividing the atmosphere and ocean into millions of discrete grid boxes and computing changes over small time steps.", "By treating the Earth as a single 0-dimensional point."], "ans": "By dividing the atmosphere and ocean into millions of discrete grid boxes and computing changes over small time steps."},
+            {"q": "In paleoclimate ice core records, what does the isotope Deuterium (D) primarily help estimate?", "opts": ["Past atmospheric methane concentrations.", "Antarctic air temperature, because heavier isotopes evaporate less easily depending on temperature.", "The speed of the oceanic thermohaline circulation."], "ans": "Antarctic air temperature, because heavier isotopes evaporate less easily depending on temperature."},
+            {"q": "During the last glacial maximum, how did global sea levels compare to today?", "opts": ["They were 50 meters higher.", "They were roughly 120 meters below present levels.", "They were exactly the same."], "ans": "They were roughly 120 meters below present levels."},
+            {"q": "What was the pre-industrial 'interglacial' concentration of CO2 compared to 'glacial' periods?", "opts": ["Interglacial was ~280 ppm, while glacial was ~180 ppm.", "Interglacial was ~180 ppm, while glacial was ~280 ppm.", "They were both roughly 400 ppm."], "ans": "Interglacial was ~280 ppm, while glacial was ~180 ppm."}
         ]
     },
     "2. Basics of Global Climate": {
         "pages": [
-            "2.1 Concept: Blackbody Radiation", 
-            "2.2 Concept: Solar Constant & Albedo", 
-            "2.3 Concept: Atmospheric Structure", 
-            "2.4 Concept: Carbon Reservoirs",
-            "2.5 Model: Blackbody Energy Output",
-            "2.6 Knowledge Check"
+            "2.1 Concept: Components & Parameterization", 
+            "2.2 Concept: Energy Balance & Radiation", 
+            "2.3 Concept: Atmospheric Circulation", 
+            "2.4 Concept: Ocean Circulation & Land Surface",
+            "2.5 Concept: The Carbon Cycle",
+            "2.6 Model: Carbon Accumulation",
+            "2.7 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "According to the Stefan-Boltzmann Law, energy emitted is proportional to:", "opts": ["Temperature squared", "Temperature cubed", "Temperature to the fourth power"], "ans": "Temperature to the fourth power"},
-            {"q": "If you double the temperature of a blackbody, its energy output increases by:", "opts": ["2 times", "4 times", "16 times"], "ans": "16 times"},
-            {"q": "What is Albedo?", "opts": ["The fraction of light absorbed.", "The fraction of light reflected.", "The speed of light in water."], "ans": "The fraction of light reflected."},
-            {"q": "What happens if Earth's albedo increases?", "opts": ["The Earth cools.", "The Earth warms.", "Nothing happens."], "ans": "The Earth cools."},
-            {"q": "Why does the Stratosphere warm with height?", "opts": ["Because it is closer to the sun.", "Because the ozone layer absorbs UV radiation.", "Because clouds trap heat there."], "ans": "Because the ozone layer absorbs UV radiation."},
-            {"q": "In which atmospheric layer does weather primarily occur?", "opts": ["Mesosphere", "Stratosphere", "Troposphere"], "ans": "Troposphere"},
-            {"q": "Which carbon reservoir holds the most carbon?", "opts": ["The Atmosphere", "The Deep Ocean", "Fossil Reserves"], "ans": "The Deep Ocean"},
-            {"q": "Which carbon reservoir is the smallest but most sensitive 'control knob'?", "opts": ["The Atmosphere", "The Deep Ocean", "The Biosphere"], "ans": "The Atmosphere"},
-            {"q": "What is the approximate average incoming energy at the top of the atmosphere?", "opts": ["1367 W/m2", "342 W/m2", "0 W/m2"], "ans": "342 W/m2"},
-            {"q": "What constitutes 'Fossil Reserves'?", "opts": ["Carbon in living trees.", "Carbon locked away for millions of years.", "Carbon dissolving in the ocean today."], "ans": "Carbon locked away for millions of years."}
+            {"q": "What are the three major carbon reservoirs mentioned in the notes?", "opts": ["Ocean, Fossil fuel reserves, and Land", "Atmosphere, Biosphere, and Lithosphere", "Stratosphere, Troposphere, and Cryosphere"], "ans": "Ocean, Fossil fuel reserves, and Land"},
+            {"q": "What drives the deep ocean (thermohaline) circulation?", "opts": ["Lunar tides and solar flares.", "Water density (temperature and salinity), wind, and upwelling.", "Only the Coriolis force."], "ans": "Water density (temperature and salinity), wind, and upwelling."},
+            {"q": "What is the approximate global average planetary albedo?", "opts": ["0.08", "0.90", "0.31"], "ans": "0.31"},
+            {"q": "What is the Hadley cell?", "opts": ["A battery used to power satellites.", "A thermally driven, overturning circulation rising in the tropics and sinking in the subtropics.", "A deep ocean trench near Antarctica."], "ans": "A thermally driven, overturning circulation rising in the tropics and sinking in the subtropics."},
+            {"q": "Atmospheric concentrations of CO2 rise by about 1 ppm for each:", "opts": ["2.1 PgC that remains in the atmosphere.", "10.5 PgC emitted by fossil fuels.", "1.0 PgC absorbed by the ocean."], "ans": "2.1 PgC that remains in the atmosphere."},
+            {"q": "How is ocean surface circulation characterized in the subtropics and middle latitudes?", "opts": ["As anticyclonic gyres with compensating poleward return flows in narrow western boundary currents.", "As a perfectly straight line from East to West.", "As a completely stagnant mixed layer."], "ans": "As anticyclonic gyres with compensating poleward return flows in narrow western boundary currents."},
+            {"q": "How does land use change, such as deforestation, affect the atmosphere?", "opts": ["It cools the planet by increasing albedo.", "It tends to increase CO2 by releasing carbon from soil and biomass.", "It has no measurable effect."], "ans": "It tends to increase CO2 by releasing carbon from soil and biomass."},
+            {"q": "What is the Greenhouse Effect primarily driven by?", "opts": ["Ozone absorbing UV radiation in the stratosphere.", "Upward IR trapped by the atmosphere and re-emitted downward, where part is absorbed by the surface.", "Friction from the wind creating heat."], "ans": "Upward IR trapped by the atmosphere and re-emitted downward, where part is absorbed by the surface."},
+            {"q": "Approximately how much of the incoming solar radiation is absorbed by the Earth's surface?", "opts": ["Nearly 50%", "About 10%", "Exactly 100%"], "ans": "Nearly 50%"},
+            {"q": "Why is the parameterization problem important in climate models?", "opts": ["Because computers are too slow to run at all.", "Because small-scale effects like clouds have important impacts on large-scale climate but are smaller than model grid boxes.", "Because the lithosphere changes too quickly."], "ans": "Because small-scale effects like clouds have important impacts on large-scale climate but are smaller than model grid boxes."}
         ]
     },
     "3. Physical Processes": {
         "pages": [
-            "3.1 Concept: Equation of State", 
-            "3.2 Concept: Geostrophic Balance", 
-            "3.3 Concept: Friction's Role", 
-            "3.4 Concept: Rossby Waves", 
-            "3.5 Knowledge Check"
+            "3.1 Concept: Momentum & Forces", 
+            "3.2 Concept: State & Hydrostatic Balance", 
+            "3.3 Concept: Temp, Continuity, & Chaos", 
+            "3.4 Concept: Moisture & Moist Processes",
+            "3.5 Concept: Wave Processes",
+            "3.6 Model: Adiabatic Lapse Rates",
+            "3.7 Knowledge Check"
         ],
         "quiz_pool": [
-            {"q": "What variables are connected in the Equation of State for the atmosphere?", "opts": ["Pressure, Density, and Temperature", "Wind speed, Humidity, and Albedo", "Gravity, Mass, and Volume"], "ans": "Pressure, Density, and Temperature"},
-            {"q": "In the ocean, what additional variable strongly affects density?", "opts": ["Oxygen", "Salinity", "Light penetration"], "ans": "Salinity"},
-            {"q": "Geostrophic balance occurs when the Pressure Gradient Force is balanced by:", "opts": ["Friction", "Gravity", "The Coriolis Force"], "ans": "The Coriolis Force"},
-            {"q": "Because of Geostrophic Balance, how does wind flow in the upper atmosphere?", "opts": ["Straight into low pressure.", "Around high and low-pressure systems.", "Directly north to south."], "ans": "Around high and low-pressure systems."},
-            {"q": "What does friction do to wind near the Earth's surface?", "opts": ["Speeds it up.", "Slows it down and weakens the Coriolis Force.", "Causes it to rise straight up."], "ans": "Slows it down and weakens the Coriolis Force."},
-            {"q": "When friction weakens the Coriolis force, what happens to the wind?", "opts": ["It stops entirely.", "It crosses isobars and spirals inward toward low pressure.", "It flows perfectly straight."], "ans": "It crosses isobars and spirals inward toward low pressure."},
-            {"q": "What are Rossby Waves?", "opts": ["Giant meanders in the jet stream.", "Ocean waves crashing on the shore.", "Sound waves in the stratosphere."], "ans": "Giant meanders in the jet stream."},
-            {"q": "How can a warm patch in the Pacific cause a cold snap in New York?", "opts": ["Through groundwater transfer.", "Through teleconnections driven by Rossby Waves.", "It is pure coincidence."], "ans": "Through teleconnections driven by Rossby Waves."},
-            {"q": "If density increases while temperature stays constant, what happens to pressure?", "opts": ["It decreases.", "It increases.", "It remains the same."], "ans": "It increases."},
-            {"q": "The Coriolis force pulls air to the side because of:", "opts": ["The moon's gravity.", "Earth's rotation.", "Magnetic fields."], "ans": "Earth's rotation."}
+            {"q": "What is the value of the horizontal component of the Coriolis force exactly on the equator?", "opts": ["Maximum", "Zero", "Negative"], "ans": "Zero"},
+            {"q": "What happens to the Coriolis force as wind is slowed down by surface friction?", "opts": ["It gets stronger, pulling wind backwards.", "It weakens, allowing the pressure gradient force to pull wind across isobars toward low pressure.", "It remains unaffected by friction."], "ans": "It weakens, allowing the pressure gradient force to pull wind across isobars toward low pressure."},
+            {"q": "What is the 'Beta effect'?", "opts": ["The rate of cooling in the stratosphere.", "The change of the Coriolis parameter with latitude, which is proportional to the cosine of latitude and maximum at the equator.", "The ratio of salt to water in ocean upwelling."], "ans": "The change of the Coriolis parameter with latitude, which is proportional to the cosine of latitude and maximum at the equator."},
+            {"q": "According to hydrostatic balance, the vertical pressure gradient is dominantly balanced by what?", "opts": ["Gravity", "Friction", "The Coriolis force"], "ans": "Gravity"},
+            {"q": "What is the dry adiabatic lapse rate for a rising parcel of air?", "opts": ["2°C per kilometer", "10°C per kilometer", "6°C per kilometer"], "ans": "10°C per kilometer"},
+            {"q": "Why is the moist adiabatic lapse rate (roughly 6°C/km) less than the dry adiabatic lapse rate?", "opts": ["Because clouds reflect sunlight.", "Because latent heat is released by the condensation of water vapor, which reduces the cooling.", "Because water vapor is heavier than air."], "ans": "Because latent heat is released by the condensation of water vapor, which reduces the cooling."},
+            {"q": "What causes equatorial upwelling in the ocean?", "opts": ["Lunar tides pulling the deep ocean upward.", "The divergence of ocean surface currents away from the equator due to easterly winds and the Coriolis force.", "Volcanic heating at the ocean floor."], "ans": "The divergence of ocean surface currents away from the equator due to easterly winds and the Coriolis force."},
+            {"q": "Why does precise weather prediction become essentially impossible after 10 to 14 days?", "opts": ["Because complex, nonlinear feedbacks cause any small initial error to grow rapidly, known as chaos.", "Because satellites run out of power every two weeks.", "Because the Coriolis force resets every 14 days."], "ans": "Because complex, nonlinear feedbacks cause any small initial error to grow rapidly, known as chaos."},
+            {"q": "How much latent heat is released during the condensation of water vapor?", "opts": ["3.34 x 10^5 J/kg", "2.50 x 10^6 J/kg", "9.8 m/s^2"], "ans": "2.50 x 10^6 J/kg"},
+            {"q": "What are Rossby waves?", "opts": ["Ocean waves that break on the beach.", "Giant meanders in the atmospheric jet stream or ocean that create long-distance teleconnections.", "Sound waves created by thunderstorms."], "ans": "Giant meanders in the atmospheric jet stream or ocean that create long-distance teleconnections."}
         ]
     },
     "4. El Niño (ENSO)": {
@@ -322,46 +327,90 @@ st.title(page)
 
 # --- CHAPTER 1 CONTENT ---
 if chapter == "1. Overview of Climate Variability":
-    if page == "1.1 Concept: Pillars of Variability":
+    if page == "1.1 Concept: Weather, Climate, & Anomalies":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.1: The Three Pillars</h3>
-        <p>Climate variability is driven by three distinct mechanisms. Understanding which one is acting upon the data is the first step of analysis.</p>
+        <h3>Log Entry 1.1: Weather vs. Climate</h3>
+        <p>To begin analysis, we must firmly separate weather from climate. According to the foundational texts:</p>
         <ul>
-            <li><b>Internal Variability:</b> Natural "wobbles" within the climate system itself. These move heat around (like El Niño or the North Atlantic Oscillation) but do not add new energy to the entire globe.</li>
-            <li><b>External Forcing (Natural):</b> Factors outside the immediate atmosphere/ocean system. This includes volcanic eruptions (which block sunlight) or Milankovitch cycles (changes in Earth's orbit modifying solar input).</li>
-            <li><b>External Forcing (Anthropogenic):</b> Human-driven changes, primarily the emission of greenhouse gases and aerosols into the atmosphere.</li>
+            <li><b>Weather:</b> The state of the atmosphere and ocean at a given moment. It is a <i>particular event</i>.</li>
+            <li><b>Climate:</b> The average condition of the atmosphere, ocean, land surfaces, and ecosystems. It represents the <i>probability</i> of an event occurring (e.g., the probability of a >10mm rainfall event in Boulder in September).</li>
+        </ul>
+        <br><br><br>
+        <p><b>Climatology</b> involves taking averages over a sufficiently long interval—such as averaging 15 different Januaries to obtain a baseline January climatology. From this baseline, we calculate <b>Anomalies</b>, which are departures from normal climatological conditions (e.g., subtracting the 1950-1998 average from December 1997 temperatures).</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "1.2 Concept: Drivers & Greenhouse Gases":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 1.2: Drivers of Variation</h3>
+        <p>Climate varies on many timescales, driven by different physical processes:</p>
+        <ul>
+            <li><b>Internal Variability:</b> Natural wobbles like El Niño, the North Atlantic Oscillation, and the Pacific Decadal Oscillation.</li>
+            <li><b>Natural External Forcing:</b> Variations in Earth's orbital parameters (causing ice ages) or continental drift and geologic CO2 variations.</li>
+            <li><b>Anthropogenic Climate Change:</b> Changes due to human activities, such as the ozone hole, acid rain, and global warming.</li>
+        </ul>
+        <br><br><br>
+        <p>The main driver of observed warming since the industrial revolution is anthropogenic greenhouse gas emissions. The atmosphere consists mostly of Nitrogen (78.08%), Oxygen (20.95%), Argon (0.93%), and Water Vapor (0.1 to 2%). However, <b>trace gases</b> control the energy budget by absorbing infrared radiation:</p>
+        <ul>
+            <li><b>Carbon Dioxide (CO2):</b> ~377 ppm in 2004. Trend driven by fossil fuels; interannual variations driven by biology.</li>
+            <li><b>Methane (CH4):</b> 1.75 ppm. Sources include cattle, sheep, rice paddies, wetlands, and termites.</li>
+            <li><b>Chlorofluorocarbons (CFCs):</b> Man-made (zero before 1950). Rowland and Molina predicted their ozone destruction in 1974. Phased out by the 1987 Montreal Protocol, though recovery takes ~50 years.</li>
+        </ul>
+        <p>Earth's future annual average surface temperature is ultimately more predictable than internal weather variations because it is strictly controlled by the <i>energy balance</i>.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "1.3 Concept: Model Hierarchy & Grid Boxes":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 1.3: Modeling the System</h3>
+        <p>Because the Earth System involves interlocking physical, chemical, and biological aspects, scientists use a hierarchy of mathematical models to simulate it:</p>
+        <ul>
+            <li><b>Simple Energy Balance Models:</b> Illustrate the fundamental importance of energy balance to the climate state.</li>
+            <li><b>Intermediate Complexity Models:</b> Include basic atmosphere/ocean equations but retain only the processes relevant to a target phenomenon (like early ENSO models).</li>
+            <li><b>General Circulation Models (GCMs):</b> The most complex. They divide the atmosphere and ocean into a discrete 3D grid (millions of grid boxes).</li>
+        </ul>
+        <br><br><br>
+        <p>In a GCM, equations for the balance of forces and energy are solved numerically. The model calculates the acceleration and rate of change of temperature in each box, depends on neighboring boxes, and then steps forward in time (e.g., 20 minutes for the atmosphere, 1 hour for the ocean). Because simulating centuries is computationally expensive, current efforts are exploring machine-learning emulators.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "1.4 Concept: IPCC & Emissions Pathways":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 1.4: Policy and Projections</h3>
+        <p>Climate models guide major policy bodies, notably the <b>Intergovernmental Panel on Climate Change (IPCC)</b>. Established in 1988 by UNEP and WMO, the IPCC does not conduct research but reviews it across three Working Groups: WG1 (Physical Science), WG2 (Impacts/Adaptation), and WG3 (Mitigation).</p>
+        <br><br><br>
+        <p><b>The Paris Agreement (2015, COP21):</b> Aims to hold global temperature rise to "well below 2°C above preindustrial levels" utilizing Nationally Determined Contributions (NDCs). A major gap remains between these NDCs and a 2°C pathway.</p>
+        <p>To understand mitigation, we must link emissions to atmospheric concentrations. For a long-lived greenhouse gas like CO2:</p>
+        <ul>
+            <li><b>Increasing Emissions:</b> Concentration increases at an ever-faster rate.</li>
+            <li><b>Constant Emissions:</b> Concentration undergoes an ongoing, continuous increase.</li>
+            <li><b>Decreasing Emissions:</b> Concentration still increases, just less quickly.</li>
+            <li><b>Very Low Emissions:</b> Only then does stabilization occur. If we overshoot, we must achieve "negative emissions" (actively removing CO2).</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.2 Concept: Trusting Projections":
+    elif page == "1.5 Concept: Paleoclimate & Ice Cores":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 1.2: Weather vs. Climate Prediction</h3>
-        <p>A common fallacy is asking: <i>"If we can't predict the weather next week, how can we predict the climate in 50 years?"</i></p>
-        <p><b>Weather is Chaos:</b> Weather is an initial value problem. Small errors in our starting data (a missing temperature reading over the ocean) grow exponentially over a few days, destroying our ability to predict exactly where a storm will be. </p>
-        <p><b>Climate is a Boundary Value Problem:</b> We aren't predicting individual storms. We are predicting the statistical average. If you add a massive amount of new energy to a closed system (via CO2 trapping heat), the system <i>must</i> warm up to reach a new equilibrium. Energy must balance.</p>
+        <h3>Log Entry 1.5: Deep Time</h3>
+        <p>The distant geological past featured climates significantly warmer than present, with higher CO2 levels. Over millions of years, deposition sequestered this carbon as fossil fuels. Humans are returning this CO2 to the atmosphere over a microscopically short period.</p>
+        <br><br><br>
+        <p>For the past several hundred thousand years, we rely on Antarctic ice cores. Scientists analyze the isotope <b>Deuterium (D)</b>. Water molecules containing heavier isotopes evaporate less easily and condense more easily depending on temperature, allowing scientists to estimate historical temperatures.</p>
+        <p>These records show ~100,000-year glacial cycles driven by the <b>Milankovitch theory</b>—variations in Earth's orbital parameters (tilt, eccentricity) with periods of 19, 23, 41, 100, and 400 thousand years. During glacial maximums, CO2 dropped to ~180 ppm, and sea levels plummeted 120 meters below present. During interglacials, CO2 stabilized around ~280 ppm. Modern CO2 levels massively exceed any natural levels seen in the past 650,000 years.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "1.3 Concept: Model Hierarchy":
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Log Entry 1.3: The Tools of the Trade</h3>
-        <p>Scientists don't just use one giant computer program. They use a hierarchy of models:</p>
-        <ul>
-            <li><b>Energy Balance Models (EBMs):</b> The simplest math. They treat the entire Earth as a single 0-dimensional point to calculate basic temperature physics (Energy In = Energy Out).</li>
-            <li><b>Intermediate Models:</b> Focus on specific regional phenomena, like predicting an El Niño event, using simplified physics to save computing power.</li>
-            <li><b>General Circulation Models (GCMs):</b> The heavy lifters. These divide the entire globe into a massive 3D grid, simulating fluid dynamics, wind, ocean currents, and even biological processes. </li>
-        </ul>
-        </div>
-        """, unsafe_allow_html=True)
-        render_next_button(chapter, page)
-
-    elif page == "1.4 Model: Smoothing Data":
+    elif page == "1.6 Model: Smoothing Data":
         st.markdown("""
         <div class="lesson-card">
         <h3>Modeling Bay: Moving Averages</h3>
@@ -400,71 +449,97 @@ df['Smoothed Trend'] = df['Raw Temp'].rolling(window=10, center=True).mean() # T
             
             st.info("""
             **Graph Analysis:**
-            * **Raw Temp (Noise):** Notice how violently this line spikes up and down. This represents internal climate variability. If you only looked at a 3-year chunk, you might falsely conclude the planet was rapidly cooling.
-            * **Smoothed Trend (Signal):** By calculating a 10-year rolling average, we strip away the short-term chaos. What remains is a smooth, steady upward slope representing the true anthropogenic forcing.
+            
+            * **Raw Temp (Noise):** Notice how violently this line spikes up and down from year to year. This represents internal climate variability (like El Niño or La Niña). If you only looked at a short 3-to-4 year chunk of this line, you might falsely conclude the planet was rapidly cooling or rapidly warming. This chaotic short-term data represents "weather."
+            * **Smoothed Trend (Signal):** By calculating a 10-year rolling average, we strip away the short-term, year-to-year chaos. What remains is a much smoother, steady upward slope. This reveals the underlying anthropogenic forcing (human-caused warming trend) of exactly 0.02 degrees per year that was completely hidden beneath the noise. This long-term statistical average represents "climate."
             """)
             
         render_next_button(chapter, page)
 
-    elif page == "1.5 Knowledge Check":
+    elif page == "1.7 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 2 CONTENT ---
 elif chapter == "2. Basics of Global Climate":
-    if page == "2.1 Concept: Blackbody Radiation":
+    if page == "2.1 Concept: Components & Parameterization":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 2.1: The Stefan-Boltzmann Law</h3>
-        <p>Everything with a temperature emits radiation. The hotter an object is, the more energy it blasts into space.</p>
-        <p>The core equation here is the Stefan-Boltzmann Law. The total energy emitted ($E$) is proportional to the temperature ($T$) raised to the fourth power:</p>
-        <p>$$ E = \sigma T^4 $$</p>
-        <p>Because of that exponent, temperature changes are incredibly sensitive. If you somehow doubled the temperature of an object, the energy output wouldn't double—it would increase by <b>16 times</b> ($2^4 = 16$).</p>
-        </div>
-        """, unsafe_allow_html=True)
-        render_next_button(chapter, page)
-
-    elif page == "2.2 Concept: Solar Constant & Albedo":
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Log Entry 2.2: Incoming Energy and Reflection</h3>
-        <p><b>The Solar Constant ($S_0$):</b> The sun blasts the Earth with roughly $1367 \text{ W/m}^2$ of energy. However, because Earth is a sphere (meaning the poles get glancing blows) and half the planet is in nighttime shadow, the average incoming energy at the top of the atmosphere is divided by 4, resulting in about <b>$342 \text{ W/m}^2$</b>. </p>
-        <p><b>Albedo ($\alpha$):</b> Not all of that energy is absorbed. Albedo is the fraction of light reflected back into space. Earth's average is about 0.3 (or 30%). White surfaces like ice have high albedo, while dark oceans have low albedo.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        render_next_button(chapter, page)
-
-    elif page == "2.3 Concept: Atmospheric Structure":
-        st.markdown("""
-        <div class="lesson-card">
-        <h3>Log Entry 2.3: Layers of the Sky</h3>
-        <p>The atmosphere is not uniform; it is built in distinct layers defined by their temperature profiles.</p>
+        <h3>Log Entry 2.1: The Climate System</h3>
+        <p>The climate system consists of distinct components acting across vastly different time scales:</p>
         <ul>
-            <li><b>Troposphere:</b> The lowest layer, where we live and where all weather happens. Here, temperature <b>decreases</b> with height (it gets colder as you climb a mountain). </li>
-            <li><b>Stratosphere:</b> The layer above. Paradoxically, temperature <b>increases</b> with height here. This happens because the ozone layer is situated here, actively absorbing high-energy UV radiation from the sun and warming the surrounding air.</li>
+            <li><b>Atmosphere:</b> Responds in days to months.</li>
+            <li><b>Ocean:</b> The upper layer responds in months to years, but the deep ocean responds in decades to millennia.</li>
+            <li><b>Cryosphere:</b> Includes land ice, ice shelves, glaciers, snow, and sea ice. Responds in months (snow cover) to centuries/millennia (ice caps).</li>
+            <li><b>Land Surface & Biosphere:</b> Regulates local moisture and responds in hours to decades.</li>
+            <li><b>Lithosphere:</b> The solid earth, operating on extreme geological time scales (10,000s of years for isostatic rebound, 1,000,000s for mountain building).</li>
+        </ul>
+        <p><b>The Parameterization Problem:</b> When we simulate this system in climate models, we use grid boxes (e.g., 5°x5°). However, models only calculate the <i>average</i> across that box. Small-scale variations inside the box—like squall lines and cumulonimbus clouds—are completely invisible to the grid. Because these small-scale effects deeply impact large-scale heating and radiation, scientists must write equations to mathematically estimate their average effects based on the large-scale moisture and temperature. This estimation technique is called <b>parameterization</b>.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "2.2 Concept: Energy Balance & Radiation":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 2.2: The Radiative Imbalance</h3>
+        <p>Earth is powered by Solar radiation (Shortwave). The Solar Constant ($S_0$) is roughly 1366 W/m<sup>2</sup>. Because Earth is a sphere and half is in shadow, the average solar flux reaching the top of the atmosphere is about <b>342 W/m<sup>2</sup></b>.</p>
+        <p><b>Albedo:</b> Earth's global average planetary albedo is 0.31 (31% of incident solar radiation is reflected back to space). Deep clouds reflect heavily (~0.9), while oceans absorb deeply (albedo ~0.08). The remaining solar radiation—nearly 50%—is absorbed directly by the surface.</p>
+        <p><b>Stefan-Boltzmann Law:</b> The Earth must balance this absorbed heat by emitting Infrared (IR) radiation back to space. Emission depends strictly on temperature ($E = \sigma T^4$). Because IR emission scales to the 4th power of temperature, the planet is highly effective at shedding excess heat as it warms.</p>
+        <p><b>The Greenhouse Effect:</b> Upward IR emitted from the surface is mostly trapped in the atmosphere by greenhouse gases. The atmosphere warms and re-emits this IR both upward to space and downward to the surface. This downward emission results in significant additional warming of the surface compared to an atmosphere with no IR absorption.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "2.3 Concept: Atmospheric Circulation":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 2.3: Atmospheric Heat Transport</h3>
+        <p>Because the equator absorbs drastically more solar energy than the poles, there is a massive energy gradient. The atmosphere and ocean exist to transport this heat poleward.</p>
+        <ul>
+            <li><b>The Hadley Cell:</b> A thermally driven, overturning circulation. Hot air rises deep in the tropics (creating heavy precipitation features like the Intertropical Convergence Zone, or ITCZ) and sinks in the subtropics. This descent causes the subtropics to be warm at upper levels, making it hard to convect, resulting in very little rain (deserts).</li>
+            <li><b>Midlatitudes:</b> Atmospheric circulation is dominated by westerlies (winds from the west). Here, energy and moisture transport is dominated by time-varying storms (transient weather disturbances) across storm tracks.</li>
+            <li><b>The Walker Circulation:</b> Circulation is not perfectly symmetric. Longitudinally, the Walker circulation dominates the tropics, driven by intense rainfall and convection over the warm waters of the Western Pacific.</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "2.4 Concept: Carbon Reservoirs":
+    elif page == "2.4 Concept: Ocean Circulation & Land Surface":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 2.4: The Big Three Reservoirs</h3>
-        <p>Carbon moves through the Earth system via reservoirs. Understanding their scale is crucial:</p>
+        <h3>Log Entry 2.4: Currents and Land Use</h3>
+        <p><b>Ocean Circulation:</b></p>
         <ul>
-            <li><b>Deep Ocean:</b> The absolute massive behemoth. It holds the vast majority of the planet's carbon, but the cycle moves incredibly slowly.</li>
-            <li><b>Fossil Reserves:</b> Carbon that was "locked away" from the active cycle for millions of years (coal, oil). Humans are currently mining this and forcing it into the active cycle.</li>
-            <li><b>Atmosphere:</b> The smallest reservoir. Because it is so small, relatively tiny additions of carbon cause massive fluctuations. It acts as the "control knob" for global temperature.</li>
+            <li><b>Surface Currents:</b> Driven by surface wind and constrained by Earth's rotation. There are easterly currents at the equator and anticyclonic gyres in the subtropics and middle latitudes. Compensating return flows occur in narrow, fast western boundary currents (like the Gulf Stream or Kuroshio).</li>
+            <li><b>Thermohaline Circulation:</b> The deep ocean circulation. It is driven by water density, wind, and upwelling. Water density is dictated by both temperature (thermo) and salinity (haline). In small regions off Greenland or Antarctica, extremely cold and salty water sinks, driving exchanges of heat and carbon with the deep ocean on very long timescales.</li>
         </ul>
+        <p><b>Land Surface:</b></p>
+        <p>The land surface does not transport or store heat significantly compared to the ocean. However, it regulates local temperature, moisture, and carbon. Rapid land use changes, such as deforestation for agriculture or timber, degrade the capability of the terrestrial ecosystem to regulate these cycles, actively releasing carbon from soil and biomass into the atmosphere.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "2.5 Model: Blackbody Energy Output":
+    elif page == "2.5 Concept: The Carbon Cycle":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Modeling Bay: $T^4$ Sensitivity</h3>
-        <p>Let's use Python to visualize how rapidly energy output scales with temperature due to the Stefan-Boltzmann law.</p>
+        <h3>Log Entry 2.5: Tracking The Reservoirs</h3>
+        <p>Carbon cycles heavily between three major reservoirs:</p>
+        <ol>
+            <li><b>Ocean:</b> Holds ~85% of carbon, especially in the deep ocean.</li>
+            <li><b>Fossil Fuel Reserves:</b> Holds ~8.9% (locked away over millions of years).</li>
+            <li><b>Land:</b> Holds ~5.1%.</li>
+        </ol>
+        <p>The <b>Atmosphere</b> is a substantially smaller carbon reservoir, holding only 1.3%. Because it is so small, relatively tiny net carbon fluxes from human emissions have massive impacts.</p>
+        <p><b>Anthropogenic Flux:</b> Fossil fuels emit roughly 8 to 10 PgC/yr (Petagrams of Carbon per year). Land use change adds roughly another 1.6 PgC/yr. Fortunately, only about half of this carbon remains in the atmosphere; the rest is taken up by the ocean and land vegetation sinks. However, atmospheric concentrations of CO2 still rise by about <b>1 ppm for each 2.1 PgC</b> that remains in the atmosphere.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "2.6 Model: Carbon Accumulation":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Modeling Bay: Emissions to Concentrations</h3>
+        <p>Using the professor's conversion factor (1 ppm = 2.1 PgC), let's mathematically model how decades of fossil fuel emissions accumulate in the atmosphere, accounting for the ~50% absorption rate by the ocean and land sinks.</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -472,85 +547,185 @@ elif chapter == "2. Basics of Global Climate":
 import pandas as pd
 import numpy as np
 
-# Create an array of temperatures from 200 Kelvin to 400 Kelvin
-temperatures = np.arange(200, 401, 10) 
+# Simulate years 2000 to 2050
+years = np.arange(2000, 2051)
 
-# Stefan-Boltzmann Constant
-sigma = 5.67e-8 
+# Assume baseline emissions of 8.0 PgC/yr in 2000, growing steadily
+emissions_PgC = 8.0 + 0.15 * (years - 2000)
 
-# Calculate Energy Emitted (E = sigma * T^4)
-energy_emitted = sigma * (temperatures ** 4)
+# Only ~50% of emitted carbon remains in the atmosphere (the rest goes to sinks)
+remains_in_atm = emissions_PgC * 0.50
 
-# Store in DataFrame
-df = pd.DataFrame({'Temperature (K)': temperatures, 'Energy Emitted (W/m2)': energy_emitted})
-df.set_index('Temperature (K)', inplace=True)
+# Conversion rule: Atmospheric concentrations rise 1 ppm for each 2.1 PgC
+ppm_increase_per_year = remains_in_atm / 2.1
+
+# Calculate cumulative accumulation starting from ~370 ppm in the year 2000
+co2_ppm = np.zeros(len(years))
+co2_ppm[0] = 370.0
+
+for i in range(1, len(years)):
+    co2_ppm[i] = co2_ppm[i-1] + ppm_increase_per_year[i]
+
+df = pd.DataFrame({'CO2 Concentration (ppm)': co2_ppm}, index=years)
         ''', language='python')
         
         if st.button("Run Code", type="primary"):
             st.markdown("### Output Analysis:")
-            temperatures = np.arange(200, 401, 10) 
-            sigma = 5.67e-8 
-            energy_emitted = sigma * (temperatures ** 4)
-            df = pd.DataFrame({'Temperature (K)': temperatures, 'Energy Emitted (W/m2)': energy_emitted})
-            df.set_index('Temperature (K)', inplace=True)
+            years = np.arange(2000, 2051)
+            emissions_PgC = 8.0 + 0.15 * (years - 2000)
+            remains_in_atm = emissions_PgC * 0.50
+            ppm_increase_per_year = remains_in_atm / 2.1
+            
+            co2_ppm = np.zeros(len(years))
+            co2_ppm[0] = 370.0
+            for i in range(1, len(years)):
+                co2_ppm[i] = co2_ppm[i-1] + ppm_increase_per_year[i]
+                
+            df = pd.DataFrame({'CO2 Concentration (ppm)': co2_ppm}, index=years)
             
             st.line_chart(df)
             
             st.info("""
             **Graph Analysis:**
-            Notice the curve of the line. It is not straight. Because energy scales to the fourth power of temperature ($T^4$), as the temperature goes up, the energy emitted skyrockets exponentially. This is the universe's ultimate negative feedback: as Earth gets hotter, it becomes wildly more efficient at blasting heat away into space.
+            Notice that the CO2 concentration does not just go up—it curves upward at an accelerating rate. Because raw emissions (PgC/yr) are increasing every year, the amount added to the atmosphere after the 50% sink reduction *also* increases every year. At a conversion rate of 2.1 PgC per 1 ppm, we see atmospheric concentrations crossing the critical 400 ppm boundary and accelerating rapidly towards 2050.
             """)
             
         render_next_button(chapter, page)
 
-    elif page == "2.6 Knowledge Check":
+    elif page == "2.7 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 3 CONTENT ---
 elif chapter == "3. Physical Processes":
-    if page == "3.1 Concept: Equation of State":
+    if page == "3.1 Concept: Momentum & Forces":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 3.1: The Rules of Density</h3>
-        <p>The atmosphere and ocean follow strict fluid dynamics. The most basic rule is the <b>Equation of State</b>:</p>
-        <p>$$ P = \rho R T $$</p>
-        <p>Where $P$ is pressure, $\rho$ is density, $R$ is a gas constant, and $T$ is temperature. This dictates that warm air expands (becomes less dense) and rises, while cold air compresses and sinks.</p>
-        <p>In the ocean, there is a massive added variable: <b>Salinity</b>. Cold, salty water is the densest fluid on the planet, driving deep ocean currents.</p>
+        <h3>Log Entry 3.1: Conservation of Momentum</h3>
+        <p>To simulate the climate, models rely on Newton's second law ($ma=F$). For the atmosphere and ocean, this is evaluated as acceleration (rate of change of velocity) equaling the sum of forces per unit mass:</p>
+        <p>$$ \text{Velocity Change} = \text{Coriolis} + \text{PGF} + \text{Gravity} + \text{Friction} $$</p>
+        <br><br><br>
+        <ul>
+            <li><b>Coriolis Force:</b> An apparent force that acts on moving masses in a rotating reference frame. It turns a body to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. The horizontal component is exactly zero at the equator.</li>
+            <li><b>The Coriolis Parameter ($f$):</b> Equal to $(4\pi / 1 \text{ day}) \sin(\text{latitude})$.</li>
+            <li><b>The Beta Effect:</b> The rate of change of the Coriolis parameter with latitude ($\beta = df/dy$). It is proportional to the cosine of latitude and is always positive, maxing out at the equator.</li>
+            <li><b>Pressure Gradient Force (PGF):</b> A force per unit mass that naturally accelerates air from higher to lower pressure ($- \frac{1}{\rho} \frac{\partial p}{\partial x}$).</li>
+            <li><b>Geostrophic Balance:</b> At large scales, the Coriolis force and the Pressure Gradient Force are the dominant horizontal forces. When they balance perfectly, the wind blows <i>parallel</i> to the isobars rather than straight across them.</li>
+            <li><b>Friction ($F_{drag}$):</b> Near the surface, drag slows the wind down. Because the Coriolis force depends on velocity, a slower wind means a weaker Coriolis pull. With the Coriolis force weakened, the Pressure Gradient Force "wins," allowing wind to cross the isobars and spiral inward toward low-pressure centers.</li>
+        </ul>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "3.2 Concept: Geostrophic Balance":
+    elif page == "3.2 Concept: State & Hydrostatic Balance":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 3.2: Why Winds Spiral</h3>
-        <p>Intuition says wind should blow directly from High Pressure to Low Pressure (the Pressure Gradient Force). But the Earth is spinning, creating the <b>Coriolis Force</b>, which pulls moving air to the side. [Image illustrating the Coriolis Force deflecting wind patterns on Earth]</p>
-        <p>In the upper atmosphere, these two forces perfectly counteract each other. The pressure tries to pull the wind inward, and Coriolis pulls it sideways. The result is <b>Geostrophic Balance</b>: the wind flows perfectly <i>around</i> the pressure systems, parallel to the isobars, rather than straight into them.</p>
+        <h3>Log Entry 3.2: Equation of State & Vertical Balance</h3>
+        <p>The <b>Equation of State</b> physically relates density to temperature and pressure.</p>
+        <ul>
+            <li><b>Atmosphere:</b> Governed by the Ideal Gas Law ($p = \rho R T$), where $R = 287 \text{ J kg}^{-1} \text{K}^{-1}$. Density ($\rho$) decreases with warmer temperatures.</li>
+            <li><b>Ocean:</b> Density is an empirical function of temperature, pressure, and importantly, <b>salinity</b>. A small increase in ocean temperature expands the water, calculated using the coefficient of thermal expansion ($\epsilon_T = 2.7 \times 10^{-4} \text{ C}^{-1}$). This is the physical mechanism behind sea level rise via thermal expansion.</li>
+        </ul>
+        <p><b>Hydrostatic Balance:</b> In the vertical direction, the pressure gradient force is overwhelmingly balanced by gravity ($dp/dz = -\rho g$). This means the pressure at any given level in the atmosphere or ocean is exactly proportional to the mass sitting directly above it.</p>
+        <p><b>Thermal Circulations:</b> Because warmer air is less dense, a column of warm air stretches taller. This means that at the surface, the warm region will have low pressure, but aloft at higher altitudes, it will actually have <i>high</i> pressure compared to a neighboring cold region. This temperature gradient creates the pressure gradient that drives systems like the Hadley and Walker circulations.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
         
-    elif page == "3.3 Concept: Friction's Role":
+    elif page == "3.3 Concept: Temp, Continuity, & Chaos":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 3.3: Surface Drag</h3>
-        <p>Geostrophic balance breaks down near the Earth's surface. Why? Because of mountains, trees, and buildings.</p>
-        <p><b>Friction</b> slows the wind down. Because the Coriolis force depends entirely on wind speed, slower wind means a weaker Coriolis pull. With Coriolis weakened, the Pressure Gradient Force "wins" the tug-of-war, allowing the wind to angle slightly across the isobars and spiral inwards toward the center of the low-pressure system (creating storms).</p>
+        <h3>Log Entry 3.3: Advection and Mass Conservation</h3>
+        <p><b>The Temperature Equation:</b> Local temperature changes are driven by direct heating, adiabatic expansion/contraction, and <b>advection</b>. Advection terms carry properties from one region to another (e.g., wind blowing from the west carrying cold air, causing local temperatures to drop).</p>
+        <br><br><br>
+        <p><b>Chaos in Weather:</b> Advection acts as a highly complex, nonlinear feedback. A slight change in initial conditions (like a tiny temperature reading error) yields vastly different outcomes later. This sensitive dependence on initial conditions means that most aspects of precise weather patterns are entirely unpredictable after ~10 to 14 days.</p>
+        <p><b>Continuity Equation (Conservation of Mass):</b> Mass cannot be created or destroyed. Horizontal divergence of fluid must be balanced by vertical motion. For example, in the ocean, easterly winds and the Coriolis force push surface currents away from the equator (divergence). To compensate for this missing water, deep, cold, nutrient-rich water must rise from below. This is the physical mechanism behind <b>Equatorial Upwelling</b>.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
         
-    elif page == "3.4 Concept: Rossby Waves":
+    elif page == "3.4 Concept: Moisture & Moist Processes":
         st.markdown("""
         <div class="lesson-card">
-        <h3>Log Entry 3.4: Teleconnections</h3>
-        <p>The high-altitude jet stream does not flow in a perfect, straight circle. It wobbles in giant, meandering loops known as <b>Rossby Waves</b>. </p>
-        <p>These planetary-scale waves are the physical mechanism for "teleconnections"—the reason why a localized patch of hot water in the remote Pacific Ocean can alter the flow of the jet stream so drastically that it causes a brutal cold snap in New York.</p>
+        <h3>Log Entry 3.4: Water Vapor and Latent Heat</h3>
+        <p><b>Specific Humidity:</b> The mass of water vapor divided by the total mass of air. It is controlled by the balance of sources (evaporation at the surface) and sinks (moist convection resulting in precipitation).</p>
+        <p><b>Latent Heat:</b> Massive amounts of energy are stored and released during phase changes. The latent heat of condensation releases $2.50 \times 10^6 \text{ J kg}^{-1}$, which actively heats the surrounding atmosphere. Conversely, the latent heat of freezing (melting ice) requires $3.34 \times 10^5 \text{ J kg}^{-1}$.</p>
+        <p><b>Saturation & Lapse Rates:</b></p>
+        <ul>
+            <li><b>Saturation:</b> Governed by the Clausius-Clapeyron relation. Saturation limits increase sharply with higher temperatures.</li>
+            <li><b>Dry Adiabatic Lapse Rate:</b> When a parcel of air rises rapidly, it expands due to dropping pressure. This "work of expansion" cools the parcel without exchanging heat with the environment. The dry adiabatic lapse rate is exactly <b>10°C/km</b>.</li>
+            <li><b>Moist Adiabatic Lapse Rate:</b> The parcel cools as it rises until it hits the <b>Lifting Condensation Level</b> (cloud base), where it becomes saturated. As it continues to rise, water vapor condenses, releasing latent heat. This extra heat fights the adiabatic cooling, resulting in a slower temperature drop of roughly <b>6°C/km</b>.</li>
+        </ul>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
 
-    elif page == "3.5 Knowledge Check":
+    elif page == "3.5 Concept: Wave Processes":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Log Entry 3.5: Rossby Waves</h3>
+        <p>The high-altitude jet stream does not flow in a perfect, straight circle. It wobbles in giant, meandering loops known as <b>Rossby Waves</b>.</p>
+        <br><br><br>
+        <p>The properties of these waves depend heavily on their wavelength. Adjustment from initial conditions leaves a wave packet propagating slowly westward. While individual highs and lows propagate westward, the actual energy of the wave packet can propagate north, south, as well as eastward.</p>
+        <p>Stationary Rossby waves can be excited and maintained by convective heating or flow over massive mountain ranges. Ultimately, Rossby waves are the fundamental mechanism that creates <b>teleconnections</b>—long-distance connections in the climate system that allow distant regions to severely impact each other's weather patterns.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        render_next_button(chapter, page)
+
+    elif page == "3.6 Model: Adiabatic Lapse Rates":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>Modeling Bay: The Physics of Rising Air</h3>
+        <p>Let's model the temperature profile of a rising parcel of air, comparing the Dry Adiabatic Lapse Rate (10°C/km) to the Moist Adiabatic Lapse Rate (~6°C/km) to visualize the warming power of latent heat condensation.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.code('''
+import pandas as pd
+import numpy as np
+
+# Simulate altitude from 0 to 10 kilometers
+altitude_km = np.arange(0, 11, 1)
+
+# Surface temperature in Celsius
+surface_temp = 30.0
+
+# Dry Adiabatic Lapse Rate: drops 10 C per km (work of expansion)
+dry_temp = surface_temp - (10.0 * altitude_km)
+
+# Moist Adiabatic Lapse Rate: drops approx 6 C per km (latent heat release offsets cooling)
+moist_temp = surface_temp - (6.0 * altitude_km)
+
+df = pd.DataFrame({
+    'Dry Adiabatic (Unsaturated)': dry_temp,
+    'Moist Adiabatic (Saturated)': moist_temp
+}, index=altitude_km)
+
+df.index.name = 'Altitude (km)'
+        ''', language='python')
+        
+        if st.button("Run Code", type="primary"):
+            st.markdown("### Output Analysis:")
+            altitude_km = np.arange(0, 11, 1)
+            surface_temp = 30.0
+            dry_temp = surface_temp - (10.0 * altitude_km)
+            moist_temp = surface_temp - (6.0 * altitude_km)
+            
+            df = pd.DataFrame({
+                'Dry Adiabatic (Unsaturated)': dry_temp,
+                'Moist Adiabatic (Saturated)': moist_temp
+            }, index=altitude_km)
+            
+            st.line_chart(df)
+            
+            st.info("""
+            **Graph Analysis:**
+            * **Dry Adiabatic:** A rapid cooling of exactly 10°C per kilometer. At 3km high, a 30°C surface parcel has already frozen (0°C).
+            * **Moist Adiabatic:** A much slower cooling curve. Because the saturated parcel is constantly condensing water vapor into liquid cloud droplets, it is constantly releasing latent heat ($2.50 \\times 10^6$ J/kg) into itself. This keeps the upper troposphere significantly warmer than it would be otherwise.
+            """)
+            
+        render_next_button(chapter, page)
+
+    elif page == "3.7 Knowledge Check":
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=5)
 
 # --- CHAPTER 4 CONTENT ---
@@ -561,7 +736,7 @@ elif chapter == "4. El Niño (ENSO)":
         <h3>Log Entry 4.1: The Walker Circulation</h3>
         <p>Before understanding El Niño, you must understand the Pacific's normal state.</p>
         <p>Normally, strong Trade Winds blow from East to West across the equator. These winds act like a snowplow, physically pushing warm surface water and piling it up in the Western Pacific (near Indonesia). This massive pile of energy is called the <b>Warm Pool</b>.</p>
-        <p>Because the water is pushed West, cold, nutrient-rich deep water is forced to upwell in the East (off the coast of South America) to replace it. </p>
+        <p>Because the water is pushed West, cold, nutrient-rich deep water is forced to upwell in the East (off the coast of South America) to replace it.</p>
         </div>
         """, unsafe_allow_html=True)
         render_next_button(chapter, page)
@@ -570,7 +745,7 @@ elif chapter == "4. El Niño (ENSO)":
         st.markdown("""
         <div class="lesson-card">
         <h3>Log Entry 4.2: The Slosh</h3>
-        <p>During an El Niño event, those East-to-West Trade Winds mysteriously collapse or even reverse. </p>
+        <p>During an El Niño event, those East-to-West Trade Winds mysteriously collapse or even reverse.</p>
         <p>Without the wind holding it back, that massive "Warm Pool" piled up in Indonesia sloshes entirely back across the Pacific Ocean toward South America. The thermocline (the boundary separating warm surface water from cold deep water) flattens out, completely shutting down the cold water upwelling in the East.</p>
         </div>
         """, unsafe_allow_html=True)
@@ -598,7 +773,7 @@ elif chapter == "5. Greenhouse Effect & Feedbacks":
         st.markdown("""
         <div class="lesson-card">
         <h3>Log Entry 5.1: The Greenhouse Trap</h3>
-        <p>The core of the greenhouse effect relies on a physics concept called <b>Selective Absorption</b>. [Image explaining the Greenhouse Effect with shortwave and longwave radiation]</p>
+        <p>The core of the greenhouse effect relies on a physics concept called <b>Selective Absorption</b>.</p>
         <p>The gases in our atmosphere are mostly transparent to high-energy, high-frequency Shortwave radiation coming from the sun. The sunlight passes right through to the surface.</p>
         <p>However, when the Earth absorbs this light and warms up, it glows by emitting lower-energy Longwave (Infrared) radiation. Greenhouse gases (like $CO_2$, methane, and water vapor) are chemically opaque to this specific frequency. They absorb the infrared heat and re-radiate it back down to the surface, trapping the energy.</p>
         </div>
@@ -652,7 +827,7 @@ elif chapter == "6. Global Warming Scenarios":
         <p>Global warming is not uniform across the globe.</p>
         <ul>
             <li><b>Polar Amplification:</b> The Arctic is warming at nearly four times the rate of the tropics. As reflective white ice melts, it reveals dark ocean water. The dark water absorbs massive amounts of heat, melting more ice in a vicious cycle.</li>
-            <li><b>Land vs. Ocean:</b> Landmasses warm much faster than oceans. The ocean has an incredibly high heat capacity—meaning it can absorb massive amounts of thermal energy before its temperature actually registers an increase. </li>
+            <li><b>Land vs. Ocean:</b> Landmasses warm much faster than oceans. The ocean has an incredibly high heat capacity—meaning it can absorb massive amounts of thermal energy before its temperature actually registers an increase.</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
