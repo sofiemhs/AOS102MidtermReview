@@ -734,6 +734,3 @@ elif chapter == "Final Exam: Terminal Clearance":
     if page == "Final Knowledge Check":
         st.warning("WARNING: This is the final evaluation. Questions are pulled from all previous databanks.")
         run_quiz(chapter, CURRICULUM[chapter]["quiz_pool"], required_score=10)
-
-
-```
