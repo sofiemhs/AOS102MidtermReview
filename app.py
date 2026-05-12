@@ -6,7 +6,7 @@ import time
 import copy
 
 # --- APP CONFIGURATION ---
-st.set_page_config(page_title="Climate Science Terminal v4.1", page_icon="💻", layout="wide")
+st.set_page_config(page_title="Climate Science Terminal v5.0", page_icon="💻", layout="wide")
 
 # --- CUSTOM CLIMATE THEME CSS ---
 st.markdown("""
@@ -78,10 +78,16 @@ def display_image(image_name, caption, idiot_proof_explanation=""):
             st.info(f"💡 **Simple Breakdown:** {idiot_proof_explanation}")
 
 # ==========================================
-# CURRICULUM DATA STRUCTURE (RESTORED FULL 6 CHAPTERS + IDIOT PROOFING)
+# CURRICULUM DATA STRUCTURE
 # ==========================================
 
 CURRICULUM = {
+    "0. Welcome to the AOS102 Terminal": {
+        "pages": [
+            "0.1 System Boot & Briefing"
+        ],
+        "quiz_pool": []
+    },
     "1. Overview of Climate Variability": {
         "pages": [
             "1.1 Concept: Correlation vs. Causation",
@@ -217,11 +223,49 @@ CURRICULUM = {
 # Auto-populate Final Exam with all available questions
 all_questions = []
 for chap, data in CURRICULUM.items():
-    if chap != "Final Exam: Terminal Clearance":
+    if chap not in ["0. Welcome to the AOS102 Terminal", "Final Exam: Terminal Clearance"]:
         all_questions.extend(data["quiz_pool"])
 CURRICULUM["Final Exam: Terminal Clearance"]["quiz_pool"] = all_questions
 
 CHAPTER_LIST = list(CURRICULUM.keys())
+
+# ==========================================
+# VOCABULARY DATA STRUCTURE
+# ==========================================
+
+VOCABULARY = {
+    "1. Overview of Climate Variability": {
+        "Climate": "Averages or other statistics over the weather for some sufficiently long interval.",
+        "Weather": "The state of the atmosphere and ocean at a given moment; a particular event.",
+        "Anomaly": "A departure from normal climatological conditions for a specified time period.",
+        "Parameterization": "Representing average effects of scales smaller than the grid scale (e.g., clouds) as a function of the grid scale variables."
+    },
+    "2. Basics of Global Climate": {
+        "Radiative Forcing": "Top-of-atmosphere initial imbalance in the energy budget due to change in GHG or aerosols.",
+        "Albedo": "The fraction of light reflected back into space.",
+        "Stefan-Boltzmann Law": "Total energy flux integrated across all wavelengths of light is proportional to temperature to the fourth power."
+    },
+    "3. Physical Processes": {
+        "Coriolis Force": "An apparent force acting on moving masses in a rotating frame, turning bodies right in the NH and left in the SH. Zero at the equator.",
+        "Geostrophic Balance": "When the Coriolis force and the Pressure Gradient Force perfectly balance, causing wind to blow parallel to isobars.",
+        "Rossby Waves": "Giant meanders in the high-altitude jet stream or ocean that create long-distance teleconnections."
+    },
+    "4. El Niño (ENSO)": {
+        "Bjerknes Feedback": "Positive loop: weak winds lead to warmer East Pacific SSTs, reducing east-west temperature contrast, which weakens winds further.",
+        "Delayed Oscillator": "Slow ocean dynamics (Rossby and Kelvin waves) that eventually reverse the ENSO phase.",
+        "Teleconnections": "Long-distance linkages where climate anomalies in one region influence weather patterns globally (e.g., PNA)."
+    },
+    "5. Greenhouse Effect & Feedbacks": {
+        "Climate Feedback Parameter (alpha)": "The increase in outgoing IR to space per unit increase in surface temperature. Positive feedbacks mathematically decrease total alpha.",
+        "Transient Response": "Real-time climate change projection, which lags behind equilibrium due to ocean heat capacity.",
+        "Constant Composition Commitment": "The continued global warming that occurs even if radiative forcing is kept constant at current levels."
+    },
+    "6. Global Warming Scenarios": {
+        "Aerosols": "Particulate matter (like sulfates) with short residence times that create a strong net cooling tendency by reflecting sunlight.",
+        "Emissions Gap": "The difference between current Nationally Determined Contributions (NDCs) and the actual deep reductions required to keep global average warming under 2°C.",
+        "Thermal Expansion": "Ocean volume increases as it absorbs heat (dh/h = epsilon_T * dT), a major driver of long-term sea level rise."
+    }
+}
 
 # ==========================================
 # SESSION STATE MANAGEMENT
@@ -240,12 +284,16 @@ def change_page(chapter, page):
     st.session_state.current_page = page
 
 # ==========================================
-# SIDEBAR NAVIGATION
+# SIDEBAR NAVIGATION & DYNAMIC GLOSSARY
 # ==========================================
 with st.sidebar:
     st.markdown("### 💻 SYSTEM NAVIGATOR")
     
-    prog_percent = int((len(st.session_state.unlocked_chapters) / len(CHAPTER_LIST)) * 100)
+    # Calculate progress (subtracting the Welcome chapter and Final Exam from total counts)
+    prog_percent = int(((len(st.session_state.unlocked_chapters) - 1) / (len(CHAPTER_LIST) - 2)) * 100)
+    # Ensure it stays within bounds
+    prog_percent = max(0, min(100, prog_percent))
+    
     st.progress(prog_percent / 100)
     st.write(f"**Clearance Level:** {prog_percent}%")
     st.write("---")
@@ -264,6 +312,24 @@ with st.sidebar:
             st.markdown(f"🔒 *{chapter} (Locked)*")
             
     st.write("---")
+    
+    # --- DYNAMIC GLOSSARY LOGIC ---
+    st.markdown("### 📖 SYSTEM GLOSSARY")
+    vocab_to_show = {}
+    for chap in st.session_state.unlocked_chapters:
+        if chap in VOCABULARY:
+            vocab_to_show.update(VOCABULARY[chap])
+    
+    if not vocab_to_show:
+        st.write("*Glossary empty. Complete missions to decrypt vocabulary.*")
+    else:
+        with st.expander("View Unlocked Terms", expanded=False):
+            for term, definition in sorted(vocab_to_show.items()):
+                st.markdown(f"**{term}:** {definition}")
+                st.markdown("---")
+                
+    st.write("---")
+    
     if st.button("System Reset (Restart Course)"):
         st.session_state.clear()
         st.rerun()
@@ -339,8 +405,35 @@ page = st.session_state.current_page
 
 st.title(page)
 
+# --- CHAPTER 0: WELCOME PAGE ---
+if chapter == "0. Welcome to the AOS102 Terminal":
+    if page == "0.1 System Boot & Briefing":
+        st.markdown("""
+        <div class="lesson-card">
+        <h3>LOG ENTRY: SYSTEM INITIALIZATION</h3>
+        <p>Welcome, Analyst. You have accessed the AOS102 Midterm Review Terminal.</p>
+        <p>Your mission is to process the contents of the professor's review files and master the physical processes of the climate system. The terminal contains encrypted case files spanning physical oceanography, atmospheric feedback loops, and global warming scenarios.</p>
+        <br>
+        <h4>Terminal Navigation Protocol:</h4>
+        <ol>
+            <li><b>Study the Logs:</b> Read the mission briefings on each page.</li>
+            <li><b>Analyze Data:</b> Use the interactive <b>Modeling Bays</b> to run Python scripts and generate live graphs.</li>
+            <li><b>Clearance Checks:</b> At the end of each chapter, you must pass a rigorous, randomized Knowledge Check. Securing a perfect score will decrypt and unlock the next chapter in the sidebar.</li>
+            <li><b>System Glossary:</b> As you unlock chapters, critical definitions will automatically decrypt and populate the <b>"System Glossary"</b> located in your sidebar. Refer to it often.</li>
+            <li><b>Final Exam:</b> A comprehensive review of all unlocked data banks.</li>
+        </ol>
+        <p>Proceed to Chapter 1 when ready to begin your first module.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Acknowledge & Begin Mission", type="primary"):
+            if "1. Overview of Climate Variability" not in st.session_state.unlocked_chapters:
+                st.session_state.unlocked_chapters.append("1. Overview of Climate Variability")
+            change_page("1. Overview of Climate Variability", CURRICULUM["1. Overview of Climate Variability"]["pages"][0])
+            st.rerun()
+
 # --- CHAPTER 1 CONTENT ---
-if chapter == "1. Overview of Climate Variability":
+elif chapter == "1. Overview of Climate Variability":
     if page == "1.1 Concept: Correlation vs. Causation":
         st.markdown("""
         <div class="lesson-card">
